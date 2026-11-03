@@ -1,0 +1,67 @@
+<p align="center">
+  <img src="media/overview.jpg" alt="Previs Studio" width="100%" />
+</p>
+
+<h1 align="center">Previs Studio</h1>
+<p align="center"><b>3D previs &amp; virtual directing for filmmakers</b><br/>Build the set · block the actors · shoot coverage with real lenses · animate · light · steer the camera with your phone · export the animatic</p>
+
+<p align="center">
+  <a href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-Setup.exe"><b>⬇ Windows</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-mac.dmg"><b>⬇ macOS</b></a> &nbsp;·&nbsp;
+  <a href="https://saeedsalarvand.github.io/previs-studio-app/app/"><b>▶ Open in the browser</b></a> &nbsp;·&nbsp;
+  <a href="https://saeedsalarvand.github.io/previs-studio-app"><b>Website</b></a> &nbsp;·&nbsp;
+  <a href="https://saeedsalarvand.github.io/previs-studio-app/app/manual/"><b>Manual (EN · FA · ES)</b></a>
+</p>
+
+<p align="center">Version 1.0.0 · free · the desktop app works fully offline</p>
+
+---
+
+## What it does
+
+| | |
+|---|---|
+| 🎬 **Shots &amp; real lenses** | Cameras with focal length, sensor, aspect ratio (2.39 … 9:16), focus and frame guides; a shot list with per-shot adjustments. |
+| 🧱 **400 ready models** | Characters, animals, furniture, lamps and chandeliers, buildings and towers, vehicles, military, street kits, nature, props, film gear. |
+| ✨ **AI Director** | Describe a scene in any language — set, blocking, shots, camera moves and lighting are built for you. Offline from a brief, or with Claude (your own API key). |
+| 🎥 **Camera motion** | Dolly, crane, jib, orbit, arc, follow, handheld… plus timing, smoothing, tracking, rigs (steadicam, drone, car mount…) and shake. |
+| ✏️ **Draw Path** | Draw the camera’s route — or an actor’s, or a car’s — from the top view; it becomes the animation. |
+| 🚶 **Actors walk, cars drive** | Keyframe characters and vehicles: walk / jog / run by speed, no foot sliding, wheels that roll and steer. |
+| 💡 **Lighting** | Three-point, Rembrandt, low-key, golden hour, moonlight… in one click; Kelvin, stops, practical lamps, time of day, exposure. |
+| 📱 **Phone camera** | Scan a QR code and move your phone — the shot camera follows. Record handheld takes over your own Wi-Fi. |
+| 🎞️ **Animatic export** | Every shot through its camera into one MP4 with burn-ins (shot, lens, timecode), 720p to 4K. |
+
+<p align="center">
+  <img src="media/director.jpg" width="49%" alt="Director" />
+  <img src="media/draw-path.jpg" width="49%" alt="Draw Path" />
+  <img src="media/object-animation.jpg" width="49%" alt="Character animation" />
+  <img src="media/phone-dialog.jpg" width="49%" alt="Phone camera" />
+  <img src="media/lighting.jpg" width="49%" alt="Lighting" />
+  <img src="media/animatic.jpg" width="49%" alt="Animatic export" />
+</p>
+
+## Install
+
+**Windows 10 / 11 (64-bit)** — download [`Previs-Studio-Setup.exe`](https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-Setup.exe) and run it. If SmartScreen says “Windows protected your PC”, click **More info → Run anyway** (the installer is not code-signed yet).
+
+**macOS 12+ (Apple Silicon &amp; Intel)** — download [`Previs-Studio-mac.dmg`](https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-mac.dmg), drag the app to **Applications**, then the first time **right-click → Open → Open**. If macOS says the app is damaged: *System Settings → Privacy &amp; Security → Open Anyway*, or run
+`xattr -dr com.apple.quarantine "/Applications/Previs Studio.app"`.
+
+**Web** — [open Previs Studio in the browser](https://saeedsalarvand.github.io/previs-studio-app/app/) (Chrome, Edge or Safari; a modern graphics card is recommended).
+
+## User manual
+
+A complete, illustrated guide — also built into the app (**?** button), offline:
+[English](https://saeedsalarvand.github.io/previs-studio-app/app/manual/en.html) · [فارسی](https://saeedsalarvand.github.io/previs-studio-app/app/manual/fa.html) · [Español](https://saeedsalarvand.github.io/previs-studio-app/app/manual/es.html)
+
+## Privacy
+
+- No account, no tracking. Projects are saved on your computer (or in your browser for the web version).
+- Phone control talks directly between your phone and your computer on your local network, encrypted.
+- The AI Director sends your scene description to Anthropic only when you use it, with **your** API key, which stays on your computer.
+
+## Creator
+
+**Saeed Salarvand** — [Instagram](https://instagram.com/Saeed__salarvand) · [Telegram](https://t.me/Saeed_VfX) · [LinkedIn](https://www.linkedin.com/in/saeed-salarvand/)
+
+© 2026 Saeed Salarvand. Free to use. The source code is private; this repository hosts the releases and the website.
