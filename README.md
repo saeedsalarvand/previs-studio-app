@@ -13,7 +13,7 @@
   <a href="https://saeedsalarvand.github.io/previs-studio-app/app/manual/"><b>Manual (EN · FA · ES)</b></a>
 </p>
 
-<p align="center">Version 1.3.0 · free · the desktop app works fully offline</p>
+<p align="center">Version 1.4.0 · free · the desktop app works fully offline</p>
 
 ---
 
