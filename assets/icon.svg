@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26282e"/>
+      <stop offset="1" stop-color="#121316"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3c066"/>
+      <stop offset="1" stop-color="#d7922c"/>
+    </linearGradient>
+  </defs>
+  <rect x="64" y="64" width="896" height="896" rx="200" fill="url(#bg)"/>
+  <rect x="64" y="64" width="896" height="896" rx="200" fill="none" stroke="#3a3d45" stroke-width="6"/>
+  <!-- film strip perforations -->
+  <g fill="#e3a646" opacity="0.9">
+    <rect x="182" y="150" width="56" height="34" rx="8"/><rect x="290" y="150" width="56" height="34" rx="8"/><rect x="398" y="150" width="56" height="34" rx="8"/><rect x="506" y="150" width="56" height="34" rx="8"/><rect x="614" y="150" width="56" height="34" rx="8"/><rect x="722" y="150" width="56" height="34" rx="8"/>
+    <rect x="182" y="840" width="56" height="34" rx="8"/><rect x="290" y="840" width="56" height="34" rx="8"/><rect x="398" y="840" width="56" height="34" rx="8"/><rect x="506" y="840" width="56" height="34" rx="8"/><rect x="614" y="840" width="56" height="34" rx="8"/><rect x="722" y="840" width="56" height="34" rx="8"/>
+  </g>
+  <!-- viewfinder corners -->
+  <g fill="none" stroke="#e8eaed" stroke-width="22" stroke-linecap="round" opacity="0.92">
+    <path d="M226 330 V262 H306"/><path d="M718 262 H798 V330"/><path d="M798 694 V762 H718"/><path d="M306 762 H226 V694"/>
+  </g>
+  <!-- P -->
+  <path d="M410 300 H560 C650 300 708 356 708 438 C708 520 650 576 560 576 H500 V724 H410 Z M500 380 V496 H552 C592 496 614 474 614 438 C614 402 592 380 552 380 Z" fill="url(#amber)"/>
+  <!-- record dot -->
+  <circle cx="760" cy="512" r="0" fill="#e5484d"/>
+</svg>

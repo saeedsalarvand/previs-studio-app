@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Previs Studio · Manual de usuario</title>
+    <meta name="description" content="Manual de usuario completo de Previs Studio: previsualización 3D y dirección virtual para cineastas." />
+    <link rel="stylesheet" href="manual.css" />
+  </head>
+  <body dir="ltr">
+    <header class="top">
+      <div class="logo">P</div>
+      <span class="name">Previs Studio · Manual de usuario</span>
+      <nav class="langs" aria-label="Idioma">
+        <a href="en.html" lang="en">English</a>
+        <a href="fa.html">Persian</a>
+        <a href="es.html" class="on" lang="es">Español</a>
+      </nav>
+    </header>
+    <div class="layout">
+      <nav class="toc" aria-label="Contenido">
+        <ol>
+          <li><a href="#welcome">Bienvenida</a></li>
+          <li><a href="#install">Instalación y primer inicio</a></li>
+          <li><a href="#interface">La interfaz</a></li>
+          <li><a href="#navigate">Moverse por la vista 3D</a></li>
+          <li><a href="#build">Construir una escena</a></li>
+          <li><a href="#models">Importar tus propios modelos</a></li>
+          <li><a href="#references">Imágenes de referencia</a></li>
+          <li><a href="#cameras">Cámaras y lentes</a></li>
+          <li><a href="#shots">Planos</a></li>
+          <li><a href="#film">Película, escenas y decorados</a></li>
+          <li><a href="#keyframes">Línea de tiempo y fotogramas clave</a></li>
+          <li><a href="#motion">Movimiento de cámara</a></li>
+          <li><a href="#drawpath">Draw Path (cámara)</a></li>
+          <li><a href="#objects">Animar personajes y vehículos</a></li>
+          <li><a href="#audio">Sonido (diálogo, música, efectos)</a></li>
+          <li><a href="#lighting">Iluminación</a></li>
+          <li><a href="#director">Director (construcción de escenas con IA)</a></li>
+          <li><a href="#aiframes">Fotogramas IA</a></li>
+          <li><a href="#screenplay">Guion → Película</a></li>
+          <li><a href="#phone">Cámara con el teléfono</a></li>
+          <li><a href="#animatic">Exportar una animática</a></li>
+          <li><a href="#storyboard">Storyboard (PDF)</a></li>
+          <li><a href="#productad">Estudio de anuncios de producto</a></li>
+          <li><a href="#aiexport">Prompt y fotogramas para IA</a></li>
+          <li><a href="#projects">Proyectos y archivos</a></li>
+          <li><a href="#shortcuts">Atajos de teclado</a></li>
+          <li><a href="#trouble">Solución de problemas</a></li>
+          <li><a href="#about">Acerca de</a></li>
+        </ol>
+      </nav>
+      <main>
+        <h1 id="welcome">Previs Studio</h1>
+        <p class="lead">Previsualización 3D y dirección virtual para cineastas: haz el blocking de una escena, coloca actores y utilería, configura cámaras y lentes, rueda tu cobertura, anima, ilumina… y exporta una animática.</p>
+        <figure><img src="img/overview.jpg" alt="Ventana principal de Previs Studio" /><figcaption>La ventana principal: biblioteca de recursos (izquierda), vista 3D (centro), escena e inspector (derecha), planos y línea de tiempo (abajo).</figcaption></figure>
+        <p>Previs Studio funciona de tres maneras, todas con las mismas funciones:</p>
+        <ul>
+          <li><b>Aplicación de escritorio</b> para Windows y macOS: funciona totalmente sin conexión. El control de cámara con el teléfono está disponible aquí.</li>
+          <li><b>Versión web</b>: abre el sitio web y trabaja en el navegador, sin instalar nada.</li>
+          <li>Los proyectos son archivos <code>.previs.json</code> sencillos que puedes llevar de una versión a otra.</li>
+        </ul>
+
+        <h2 id="install">Instalación y primer inicio</h2>
+        <h3>Windows</h3>
+        <ol class="steps">
+          <li>Descarga <code>Previs-Studio-Setup.exe</code> desde la página de descargas.</li>
+          <li>Ejecútalo. Si Windows SmartScreen muestra “Windows protegió tu PC”, haz clic en <b>More info → Run anyway</b> (Más información → Ejecutar de todas formas); el instalador aún no tiene firma de código.</li>
+          <li>Elige la carpeta de instalación y termina. Inicia Previs Studio desde el menú Inicio o el acceso directo del escritorio.</li>
+        </ol>
+        <h3>macOS</h3>
+        <ol class="steps">
+          <li>Descarga <code>Previs-Studio-mac.dmg</code> (una sola versión para Apple Silicon e Intel).</li>
+          <li>Ábrelo y arrastra <b>Previs Studio</b> a <b>Aplicaciones</b>.</li>
+          <li>La primera vez, haz <b>clic derecho en la app → Abrir → Abrir</b>. Si macOS indica que la app “está dañada” o que no se puede verificar, abre <b>Ajustes del Sistema → Privacidad y seguridad</b> y haz clic en <b>Abrir igualmente</b>, o ejecuta <code>xattr -dr com.apple.quarantine "/Applications/Previs Studio.app"</code> en Terminal.</li>
+        </ol>
+        <h3>Versión web</h3>
+        <p>Abre el enlace de la aplicación web desde la página de descargas en Chrome, Edge o Safari (se recomienda una computadora con una tarjeta gráfica razonablemente moderna). Tus proyectos se guardan en ese navegador.</p>
+        <h3>Inicio (Home)</h3>
+        <figure><img src="img/home.jpg" alt="Pantalla de inicio" /></figure>
+        <p>La app se abre en <b>Home</b>, no en la última película. A la izquierda: <b>New film</b> (título y primera escena), <b>Sample film</b> (una sala amueblada con dos actores y tres planos), <b>From a screenplay</b> (una película nueva y luego la ventana Guion → Película) y <b>Open file…</b>. A la derecha: <b>Continue</b> (la película en la que trabajaste por última vez) y <b>All films</b>, las más recientes primero, con búsqueda y orden por fecha o nombre. Cada tarjeta muestra la portada, escenas, planos, duración y la última edición; su menú <b>⋯</b> tiene Open, Rename, Duplicate y Delete. Suelta un archivo <code>.previs.json</code> en Home para abrirlo. Marca <b>Open the last film at launch</b> para saltarte Home. Home también muestra al creador, <b>Saeed Salarvand</b>, con su Instagram, Telegram y LinkedIn; el crédito “Crafted by” de la esquina inferior derecha abre la tarjeta Acerca de.</p>
+
+        <h3>Actualizaciones</h3>
+        <p>La app de escritorio busca una versión nueva cada vez que se abre (y cada pocas horas). <b>Windows</b>: la actualización se descarga en segundo plano y <b>Restart and update</b> la instala — o se instala al cerrar la app. <b>macOS</b>: te avisa de que hay una versión nueva y <b>Download</b> la abre (macOS solo deja que las apps firmadas se sustituyan solas). <b>Help → Check for Updates…</b> busca ahora. Tus proyectos se conservan.</p>
+
+        <h2 id="interface">La interfaz</h2>
+        <table>
+          <tr><th>Área</th><th>Para qué sirve</th></tr>
+          <tr><td><b>Barra de herramientas</b> (arriba)</td><td>Menú de proyecto, deshacer / rehacer, herramientas de mover · rotar · escalar, ajuste (snapping), cuadrícula y los botones grandes: <b>Director</b>, <b>Draw Path</b>, <b>Phone</b>. A la derecha: el plano activo y si las ediciones se aplican a todos los planos o solo a este plano.</td></tr>
+          <tr><td><b>Assets</b> (izquierda)</td><td>400 modelos low-poly en 15 categorías: personajes, animales, mobiliario, luminarias, arquitectura, edificios, vehículos, militar, industrial, naturaleza, calle, deportes, utilería, equipo de rodaje y formas de blocking. Busca, filtra, haz doble clic para añadir o arrastra a la vista.</td></tr>
+          <tr><td><b>Vista 3D</b> (centro)</td><td>La vista del editor (libre) o una vista de cámara (exactamente lo que ve la cámara de un plano). Una pequeña imagen en imagen muestra la cámara activa.</td></tr>
+          <tr><td><b>Scene</b> (derecha, arriba)</td><td>Todo lo que hay en la escena, agrupado: cámaras, personajes, animales, utilería, vehículos, luces, entorno. Haz clic para seleccionar, el icono del ojo para ocultar, el candado para proteger.</td></tr>
+          <tr><td><b>Inspector · Camera Motion · Lighting</b> (derecha)</td><td>Ajustes de la selección; las capas de movimiento de la cámara del plano; luces, esquemas, hora del día y exposición.</td></tr>
+          <tr><td><b>Shots</b> (abajo a la izquierda)</td><td>Tu cobertura en miniaturas. Haz clic en un plano para activarlo; arrastra para reordenar.</td></tr>
+          <tr><td><b>Timeline</b> (abajo)</td><td>Reproducir, desplazarse por el tiempo, fotogramas clave de la cámara del plano y de cada objeto animado.</td></tr>
+        </table>
+
+        <h2 id="navigate">Moverse por la vista 3D</h2>
+        <table>
+          <tr><th>Ratón / tecla</th><th>Vista del editor</th></tr>
+          <tr><td>Arrastrar con botón izquierdo</td><td>Orbitar alrededor del punto que miras</td></tr>
+          <tr><td>Arrastrar con botón central, o <kbd>Shift</kbd> + arrastrar con botón izquierdo</td><td>Desplazar (paneo de vista)</td></tr>
+          <tr><td>Rueda</td><td>Acercar hacia el cursor</td></tr>
+          <tr><td>Mantener el botón derecho + <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, <kbd>Q</kbd>/<kbd>E</kbd></td><td>Volar (el ratón mira alrededor; <kbd>Shift</kbd> = más rápido, rueda = velocidad de vuelo)</td></tr>
+          <tr><td><kbd>F</kbd></td><td>Encuadrar la selección (o toda la escena)</td></tr>
+        </table>
+        <p>Pulsa <kbd>C</kbd> para mirar <b>a través de la cámara del plano</b> y <kbd>C</kbd> de nuevo para volver. En la vista de cámara, el modo piloto (<kbd>P</kbd>) mueve la propia cámara:</p>
+        <table>
+          <tr><th>Entrada en vista de cámara</th><th>Qué hace la cámara</th></tr>
+          <tr><td>Arrastrar con botón izquierdo</td><td>Paneo / tilt (la sensibilidad depende del lente)</td></tr>
+          <tr><td>Arrastrar con botón central</td><td>Travelling lateral a izquierda/derecha y pedestal arriba/abajo</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + arrastrar con botón central</td><td>Dolly adelante / atrás</td></tr>
+          <tr><td>Mantener el botón derecho + <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, <kbd>Q</kbd>/<kbd>E</kbd></td><td>Mover la cámara por el set</td></tr>
+          <tr><td>Rueda · <kbd>Alt</kbd>/<kbd>Ctrl</kbd> + rueda</td><td>Dolly · zoom (distancia focal)</td></tr>
+        </table>
+        <figure><img src="img/camera-view.jpg" alt="Vista de cámara" /><figcaption>Vista de cámara con la barra de lentes (distancias focales, relación de aspecto, guías).</figcaption></figure>
+
+        <h2 id="build">Construir una escena</h2>
+        <ol class="steps">
+          <li><b>Añadir elementos</b>: haz doble clic en un recurso, o arrástralo al suelo, a una mesa, a un estante… se coloca sobre la superficie bajo el cursor.</li>
+          <li><b>Colocarlos</b>: selecciona y luego <kbd>W</kbd> mover · <kbd>E</kbd> rotar · <kbd>R</kbd> escalar (<kbd>Q</kbd> vuelve a seleccionar). <kbd>S</kbd> activa/desactiva el ajuste, <kbd>X</kbd> alterna ejes globales/locales, <kbd>End</kbd> deja caer la selección sobre lo que haya debajo.</li>
+          <li><b>Mundo sólido</b> (botón de pared de ladrillo en la barra, activado por defecto): nada atraviesa nada. Un personaje o mueble que arrastras se detiene en paredes y muebles y se desliza junto a ellos (apilar encima sigue funcionando); un recorrido con claves o dibujado rodea lo que estorba (se añaden claves de desvío que se recalculan al cambiar el recorrido); el Director nunca coloca personas dentro de los muebles y las mantiene separadas de las paredes; brazos y manos se retraen en lugar de entrar en una pared, una mesa u otra persona. Desactívalo para superponer cosas a propósito.</li>
+          <li><b>Organizar</b>: <kbd>Ctrl</kbd>+<kbd>D</kbd> duplicar, <kbd>Ctrl</kbd>+<kbd>G</kbd> agrupar, <kbd>H</kbd> ocultar, bloquear en la lista Scene, renombrar en el Inspector.</li>
+          <li><b>Dar vida</b>: en el Inspector, <b>Animation</b> añade una acción en bucle (reposo, hablar, sentarse, escribir, saludar, caminar en el sitio, ruedas girando, pájaros volando…). Para que algo se desplace de A a B, consulta <a href="#objects">Animar personajes y vehículos</a>.</li>
+        </ol>
+        <div class="tip"><b>Consejo.</b> Los espacios grandes funcionan: edificios, torres, carreteras, vehículos militares y kits de calle están en la biblioteca, y el plano de recorte lejano alcanza varios kilómetros.</div>
+
+        <h2 id="models">Importar tus propios modelos</h2>
+        <p>Trae tus propios modelos 3D — <b>.glb</b>, <b>.gltf</b> (autocontenido), <b>.fbx</b> u <b>.obj</b>. Pulsa <b>Import</b> arriba del panel Assets o suelta el archivo sobre la ventana.</p>
+        <ul>
+          <li><b>Tamaño</b>: los archivos en centímetros o milímetros se reconocen y se convierten a metros; escribe la altura real para cambiarla. El modelo queda sobre el suelo, centrado.</li>
+          <li><b>Aspecto</b>: conserva los materiales del modelo o usa el aspecto de arcilla del resto de la escena.</li>
+          <li><b>Tipo</b>: objeto, personaje, animal, vehículo o arquitectura — dónde aparece en la lista de la escena y cómo lo describen los prompts de IA.</li>
+          <li>Los modelos importados están en <b>Assets → My models</b> para todos los proyectos y escenas, y funcionan en decorados reutilizables. El archivo se guarda una vez; un archivo de proyecto guardado lo incluye, así se abre en cualquier ordenador.</li>
+          <li>Los modelos importados son estáticos: muévelos con fotogramas clave (<kbd>K</kbd>) o Draw path — los ciclos de caminar son para los personajes incluidos.</li>
+        </ul>
+        <div class="note"><b>Nota.</b> Los archivos comprimidos con Draco y los .gltf con texturas separadas aún no se admiten: exporta como .glb sin compresión Draco.</div>
+
+        <h2 id="references">Imágenes de referencia</h2>
+        <figure><img src="img/reference.jpg" alt="Una imagen de referencia sobre el encuadre de la cámara" /></figure>
+        <ul>
+          <li><b>Sobre el encuadre de la cámara</b> — no selecciones nada para que el Inspector muestre los ajustes del plano y pulsa <b>Reference → Add image…</b>: una viñeta de storyboard, un fotograma de una película que quieras igualar, una foto de la localización. En la vista de cámara (<kbd>C</kbd>) se superpone al encuadre; ajusta su opacidad, <b>Fit</b> (imagen completa) o <b>Fill</b> (cubrir el encuadre), ocúltala con el ojo, reemplázala o quítala. Cada plano tiene la suya; se guarda con el proyecto y se puede deshacer.</li>
+          <li><b>Como panel en la escena</b> — <b>Import</b> en el panel Assets (o soltar el archivo en la ventana) también acepta <b>.png, .jpg, .webp</b>: la imagen queda de pie sobre el suelo como un panel de dos caras, de 1,5 m de alto por defecto. Úsala como fondo, vista tras una ventana o moodboard junto al decorado; está en <b>My models</b> como los modelos importados.</li>
+        </ul>
+
+        <h2 id="cameras">Cámaras y lentes</h2>
+        <p>Añade una cámara exactamente donde estás mirando con <kbd>Shift</kbd>+<kbd>C</kbd>. Selecciona una cámara para ajustar en el Inspector: distancia focal, sensor / film back, relación de aspecto (2.39, 2.35, 1.85, 16:9, 4:3, 3:2, 1:1, 4:5, 9:16), distancia de enfoque y diafragma, recorte. <kbd>[</kbd> y <kbd>]</kbd> recorren las cámaras. La vista de cámara muestra el encuadre exacto con zonas seguras y guías.</p>
+
+        <h2 id="shots">Planos</h2>
+        <p>Un <b>plano</b> es una cámara más una duración y sus propios ajustes. Pulsa <kbd>N</kbd> (o <b>New shot</b>) para crear un plano a partir de la cámara activa, <kbd>1</kbd>–<kbd>9</kbd> para cambiar de plano, <kbd>0</kbd> para la escena base.</p>
+        <ul>
+          <li><b>All shots / This shot</b> (arriba a la derecha): elige si mover un objeto lo cambia en todas partes o solo en el plano activo (un “cheat” para este ángulo). Los objetos modificados muestran una insignia con <i>Reset to scene</i> (restablecer a la escena).</li>
+          <li>Cada plano conserva su propio tamaño, ángulo, notas, retoques de iluminación y exposición: la lista de planos se arma sola.</li>
+        </ul>
+
+        <h2 id="film">Película, escenas y decorados</h2>
+        <figure><img src="img/film.jpg" alt="Línea de tiempo de la película con dos escenas" /></figure>
+        <p>Una <b>película</b> se compone de <b>secuencias</b>, las secuencias de <b>escenas</b> y las escenas de <b>planos</b>. Cada escena tiene su propio decorado 3D, iluminación y hora del día, reparto, fotogramas clave, planos y deshacer. El botón de película en la barra (junto al nombre de la escena, p. ej. <i>Sc 2/5</i>) lista todas las escenas; haz clic en una para abrirla. Los proyectos que tenías antes se convirtieron cada uno en su propia película.</p>
+        <ul>
+          <li><b>New scene…</b> — nombre, secuencia y un decorado vacío o uno de la biblioteca. <b>Duplicate this scene</b> copia decorado, reparto, luces y planos. <b>Add a project as a scene…</b> copia otro proyecto a esta película (el original no cambia).</li>
+          <li><b>Línea de tiempo de la película</b> (<kbd>Shift</kbd>+<kbd>F</kbd>) — toda la película en una fila: secuencias, escenas de colores y sus planos según su duración, numerados <i>escena.plano</i> (3.2), con la duración total. Haz clic en un plano para abrir su escena en ese plano. Arrastra la cabecera de una escena para reordenarla, también a otra secuencia. Doble clic para renombrar. Los botones propios de deshacer / rehacer de la película deshacen cambios de orden y nombre.</li>
+          <li><b>Play film</b> reproduce plano tras plano y abre la escena siguiente al terminar una. <b>Export film animatic</b> (o <i>Whole film</i> / una secuencia en el diálogo de animática) renderiza todas las escenas en un solo vídeo.</li>
+        </ul>
+        <h3>Decorados reutilizables</h3>
+        <p>Construye una localización una vez y úsala en muchas escenas — el mismo dormitorio de noche en la escena 1 y de día en la 5, cada una con su iluminación, actores y animación.</p>
+        <ol class="steps">
+          <li>Abre la <b>Set library</b> (menú de película o línea de tiempo), nombra el decorado y pulsa <b>Save set</b>. Por defecto se guardan arquitectura, muebles y objetos, y vehículos; las luces y los personajes quedan en la escena salvo que los marques.</li>
+          <li>En <b>New scene…</b> elige el decorado, o pulsa <b>Place in scene</b> en la biblioteca. Los elementos quedan enlazados: muévelos, cámbialos o bórralos libremente en esa escena — solo cambia esa escena.</li>
+          <li>Para cambiar el decorado en sí, edítalo en una escena que lo use y elige <b>New version of “…”</b> → <b>Save new version</b>. Las demás escenas muestran <i>“El decorado tiene una versión nueva”</i>: <b>Update scene</b> la aplica (<kbd>Ctrl</kbd>+<kbd>Z</kbd> la deshace) y conserva lo que esa escena cambió; <b>Later</b> vuelve a preguntar la próxima vez; <b>Detach</b> hace que los elementos sean propios de la escena.</li>
+        </ol>
+        <div class="tip"><b>Consejo.</b> Los modelos se comparten, no se copian: un decorado usado en diez escenas guarda en cada una solo la lista de sus elementos.</div>
+
+        <h2 id="keyframes">Línea de tiempo y fotogramas clave</h2>
+        <ol class="steps">
+          <li>Pon el cabezal de reproducción en 0 s, encuadra el plano y pulsa <kbd>K</kbd>.</li>
+          <li>Mueve el cabezal, cambia el encuadre y pulsa <kbd>K</kbd> otra vez. Pulsa <kbd>Space</kbd> para reproducir.</li>
+        </ol>
+        <p>Arrastra los rombos para cambiar su tiempo, <kbd>Delete</kbd> los elimina, <kbd>Ctrl</kbd>+<kbd>C</kbd>/<kbd>V</kbd> copia claves de cámara, el menú <b>Interpolation</b> define Smooth / Linear / Ease / Hold. <b>Auto Key</b> (<kbd>Shift</kbd>+<kbd>K</kbd>) crea una clave automáticamente con cada cambio de cámara. Arrastra el marcador final para cambiar la duración del plano. <kbd>←</kbd>/<kbd>→</kbd> avanzan un fotograma, <kbd>Shift</kbd>+<kbd>←</kbd>/<kbd>→</kbd> saltan entre claves. El botón de <b>filtro</b> a la derecha de la barra de la línea de tiempo deja filas solo para los objetos <b>seleccionados</b> (como en Blender); los demás objetos animados se pliegan en una línea: haz clic en ella para verlos todos. La tira de película de arriba se oculta con su flecha (o <kbd>Shift</kbd>+<kbd>F</kbd>); su menú <b>⋯</b> tiene secuencias, la biblioteca de decorados, exportaciones y el deshacer de la película.</p>
+
+        <h2 id="motion">Movimiento de cámara</h2>
+        <figure><img src="img/camera-motion.jpg" alt="Panel Camera Motion" /></figure>
+        <p>La pestaña <b>Camera Motion</b> convierte claves sencillas en movimientos cinematográficos sin tocar las claves en sí. Elige un <b>movimiento</b> (dolly in / out, push in, paneo, tilt, travelling lateral, pedestal, grúa, jib, arco, órbita, circular, zoom, dolly zoom, seguimiento, cámara que precede, sobre el hombro, paralaje, revelación, cámara en mano…) y su intensidad, o combina capas de efectos:</p>
+        <table>
+          <tr><th>Capa</th><th>Qué hace</th></tr>
+          <tr><td>Timing</td><td>Aceleración/desaceleración suave, velocidad constante, rampas de velocidad, pausas</td></tr>
+          <tr><td>Path</td><td>Da forma al movimiento A→B como arco, órbita, grúa o línea recta</td></tr>
+          <tr><td>Smoothing · Polish</td><td>Elimina saltos; analiza y corrige movimientos bruscos</td></tr>
+          <tr><td>Tracking · Composition</td><td>Mantiene a un sujeto en cuadro, en la posición de pantalla elegida</td></tr>
+          <tr><td>Rig · Shake</td><td>Trípode, cámara en mano, al hombro, gimbal, steadicam, dolly, slider, grúa, jib, dron, soporte de auto, cablecam; vibración de cámara según el estilo</td></tr>
+        </table>
+        <p><b>Bake</b> escribe el resultado en fotogramas clave simples; <b>Restore</b> recupera la toma original.</p>
+
+        <h2 id="drawpath">Draw Path (cámara)</h2>
+        <figure><img src="img/draw-path.jpg" alt="Draw Path" /><figcaption>Dibuja el recorrido de la cámara desde arriba: se convierte en el movimiento de cámara.</figcaption></figure>
+        <ol class="steps">
+          <li>Haz clic en <b>Draw Path</b> (Dibujar trayectoria) o pulsa <kbd>Shift</kbd>+<kbd>D</kbd>. La vista cambia a una vista superior de la escena.</li>
+          <li>Dibuja el recorrido con el <b>botón izquierdo del ratón</b>. <kbd>Shift</kbd>+arrastrar continúa la misma línea. Arrastrar con el botón derecho / central desplaza la vista, la rueda hace zoom.</li>
+          <li>Ajusta la <b>altura inicial y final</b>, hacia dónde <b>mira</b> la cámara (<i>Along path</i>: a lo largo de la trayectoria; <i>At subject</i>: hacia un personaje que elijas; o <i>Fixed</i>: fija), la duración, velocidad <i>Ease</i> o <i>Constant</i>, el suavizado y <i>Bank</i> (alabeo en las curvas, estilo dron).</li>
+          <li><b>Apply path</b> (o <kbd>Enter</kbd>) escribe las claves en la cámara del plano activo (crea una cámara y un plano nuevos si no hay ninguno activo). <kbd>Esc</kbd> cancela.</li>
+        </ol>
+
+        <h2 id="objects">Animar personajes y vehículos</h2>
+        <figure><img src="img/object-animation.jpg" alt="Un personaje caminando por un recorrido con claves" /><figcaption>Un personaje recorriendo su trayecto; cada objeto animado tiene una fila verde en la línea de tiempo.</figcaption></figure>
+        <h3>Con fotogramas clave</h3>
+        <ol class="steps">
+          <li>Selecciona el personaje (o el auto), pon el cabezal donde empieza el movimiento y pulsa <kbd>K</kbd> (o <b>Key here</b> en la sección <b>Movement</b> del Inspector).</li>
+          <li>Mueve el cabezal y mueve el objeto con el gizmo: una vez que un objeto tiene claves, moverlo escribe automáticamente una clave en la posición del cabezal.</li>
+          <li>Pulsa <kbd>Space</kbd>. El objeto se desplaza entre sus claves.</li>
+        </ol>
+        <h3>Con un recorrido dibujado</h3>
+        <figure><img src="img/object-route.jpg" alt="Dibujar un recorrido para un personaje" /></figure>
+        <p>En <b>Movement</b>, haz clic en <b>Draw path</b>, dibuja hacia dónde debe ir (parte desde donde está), elige una velocidad (<i>Sneak / Walk / Jog / Run</i> para personas, <i>15–80 km/h</i> para autos) y pulsa <b>Apply route</b>. Vuelve a dibujar desde una posición posterior del cabezal para encadenar movimientos (“camina hasta la mesa y luego corre hacia la puerta”).</p>
+        <h3>Lo que ocurre automáticamente</h3>
+        <ul>
+          <li><b>Andar según la velocidad</b>: quieto → reposo, lento → caminar, más rápido → trotar, rápido → correr, con transiciones suaves. Los pies no patinan: los pasos siguen la distancia recorrida. También puedes elegir un modo de andar fijo en <b>Gait</b>.</li>
+          <li><b>Face travel</b> (mirar hacia la dirección de avance): el cuerpo gira hacia donde va y mantiene esa orientación al detenerse. Desactívalo para controlar la rotación con claves.</li>
+          <li><b>Vehículos</b>: las ruedas giran según la distancia y las delanteras se orientan en las curvas; los autos estacionados enderezan sus ruedas.</li>
+          <li>Entre movimientos, un personaje reproduce su propia animación (por ejemplo <i>Talk</i> o <i>Wave</i>) si la tiene.</li>
+          <li>La acción es <b>compartida por todos los planos</b> (continuidad en toda tu cobertura). En los ajustes de un plano, <b>Action from</b> permite que el plano empiece más adelante en la acción.</li>
+        </ul>
+
+        <h3>Cambios de acción en el tiempo</h3>
+        <p>En la sección <b>Animation</b> del Inspector, <b>Changes over time → At playhead</b> hace que un personaje haga otra cosa desde ese momento de la escena: está de pie hablando, a los 6 s <b>se sienta</b>, a los 12 s se levanta y <b>saluda</b>. Cambia el tiempo o la acción en la lista, o quítala (todo se puede deshacer). Caminar entre marcas con clave sigue siendo automático — la acción se reproduce cuando el personaje está quieto. El Director y Screenplay → Film también escriben estos cambios (“camina hasta el sofá y se sienta”).</p>
+
+        <h2 id="audio">Sonido (diálogo, música, efectos)</h2>
+        <figure><img src="img/audio.jpg" alt="Una pista de diálogo con un sonido en la línea de tiempo" /></figure>
+        <p>En la línea de tiempo, <b>Add sound → Dialogue / Music / Effects</b> coloca un archivo de audio (MP3, WAV, M4A/AAC, OGG, FLAC) en el cabezal. Los sonidos viven en el <b>tiempo continuo de la escena</b> — el mismo reloj con el que se mueven los actores — así cada plano oye la parte de la escena que muestra y un diálogo sigue sincronizado entre cortes.</p>
+        <ul>
+          <li>Cada pista tiene <b>M</b> (silenciar), <b>S</b> (solo) y un control de volumen; si la pista está ocupada, el siguiente sonido va a una pista nueva del mismo tipo.</li>
+          <li>Arrastra un sonido a izquierda / derecha para moverlo en el tiempo, arriba / abajo a otra pista; pasa por encima y pulsa × para borrarlo. Todo se puede deshacer.</li>
+          <li>La reproducción suena con la imagen; <b>Export animatic</b> (escena, secuencia o toda la película) lo escribe en el vídeo.</li>
+          <li>Los archivos de sonido se guardan una vez en este navegador / ordenador y dentro de los archivos de proyecto.</li>
+        </ul>
+
+        <h2 id="lighting">Iluminación</h2>
+        <figure><img src="img/lighting.jpg" alt="Panel Lighting" /></figure>
+        <ul>
+          <li><b>Esquemas</b> (Setups): con un clic se coloca un esquema de iluminación completo alrededor del sujeto y la cámara: tres puntos, high-key, low-key, Rembrandt, split, butterfly, silueta, hora dorada, luz de luna, luz de ventana, neón y luz de fuego.</li>
+          <li><b>Luces</b> (Lights): spot, puntual, de área y sol; color en Kelvin, intensidad en pasos (botones de ±1 paso), suavidad, haz, sombras, efectos (parpadeo, vela, fuego, TV, pulso, policía, relámpago). <kbd>Shift</kbd>+<kbd>L</kbd> añade un spot.</li>
+          <li><b>Prácticas</b> (Practicals): lámparas, candelabros, apliques y otras luminarias pueden encender su propia luz (Inspector → <i>Switch on light</i>).</li>
+          <li><b>Hora del día</b> (Time of day) mueve el sol y el cielo; <b>Exposición</b> (Exposure) aclara u oscurece toda la imagen. Ambas pueden ajustarse por plano.</li>
+          <li>Usa <b>Solo</b> en una luz para ver qué aporta por sí sola.</li>
+        </ul>
+
+        <h2 id="director">Director (construcción de escenas con IA)</h2>
+        <figure><img src="img/director.jpg" alt="Diálogo Director" /></figure>
+        <p>Haz clic en <b>Director</b> (<kbd>D</kbd>). Describe la escena en seis bloques (locación, momento, reparto y blocking, planos y cámara, iluminación y atmósfera, notas) o simplemente escribe un prompt en cualquier idioma (“una sala de interrogatorios, dos personas frente a frente a través de una mesa, una lámpara colgante, la cámara gira a su alrededor 4 veces en 30 segundos”).</p>
+        <ul>
+          <li><b>Build from brief</b> funciona sin conexión, sin IA.</li>
+          <li><b>Generate with Claude</b> diseña el set, el blocking, los planos, los movimientos de cámara y la iluminación a partir de tu prompt. Revisa el plan, ajústalo con <b>Refine</b> en lenguaje natural y luego pulsa <b>Build scene</b> (un solo paso de deshacer). Elige <i>Replace</i> (reemplazar) o <i>Add to</i> (añadir a) la escena actual.</li>
+        </ul>
+        <h3>Conectar Claude</h3>
+        <ol class="steps">
+          <li>Haz clic en el indicador de estado en la esquina superior derecha del Director (<i>Connect Claude…</i>).</li>
+          <li>Pega tu clave de API de Anthropic (créala en la Claude Console; el enlace está en el panel) y haz clic en <b>Save key</b>. La clave se verifica y luego se guarda: en la aplicación de escritorio, el sistema operativo la cifra; en la versión web, permanece en ese navegador.</li>
+          <li>Elige el modelo: <b>Opus 5.5</b> (los mejores planes), <b>Sonnet 5.5</b> (equilibrado) o <b>Haiku 5.5</b> (el más rápido y económico).</li>
+        </ol>
+        <div class="note"><b>Nota.</b> Claude es la única parte que necesita internet. El uso se factura a tu propia cuenta de Anthropic. Cuando la app se ejecuta dentro de claude.ai, se usa tu cuenta de Claude y no hace falta ninguna clave.</div>
+        <h3>Sin clave de API: tu chat de Claude</h3>
+        <p>¿Ya pagas Claude (Pro / Max)? Úsalo directamente — sin clave de API y sin coste extra:</p>
+        <ol class="steps">
+          <li>Escribe el prompt (o rellena el brief) y pulsa <b>Copy for Claude chat</b>. Se copia la instrucción completa: formato, reglas, el catálogo de objetos y tu petición.</li>
+          <li>Pégala en un chat nuevo en <b>claude.ai</b> o en la app de Claude y envíala.</li>
+          <li>Copia la respuesta completa de Claude, pégala en el cuadro que se abrió en el Director y pulsa <b>Read plan</b>. Revísalo y pulsa <b>Build scene</b>.</li>
+          <li>Para cambiar algo, escríbelo en el campo <i>Refine</i> y pulsa <b>Copy for chat</b>: se incluye el plan actual, así Claude lo revisa en lugar de empezar de cero.</li>
+        </ol>
+
+        <div class="note"><b>Consejo — dónde empieza un plano.</b> Dilo en el prompt («la cámara empieza justo detrás del hombro de Sara y avanza hasta Reza»). El plan le da al plano un punto de partida (<code>"from": {"behind": "sara"}</code>) y la cámara empieza sobre el hombro de esa persona en lugar de donde la pondría el tamaño de plano.</div>
+
+        <div class="note"><b>Pared falsa (wild wall).</b> Las habitaciones que construye el Director tienen el frente abierto para filmarlas desde fuera, como un escenario. Ese frente es una <i>wild wall</i>: desde dentro es una pared normal (un primer plano mirando hacia el frente ve una pared, no un vacío negro); desde fuera es transparente y no proyecta sombra.</div>
+
+        <h3 id="aiframes">Fotogramas IA (AI Frames)</h3>
+        <p>Convierte cualquier momento de la escena en un fotograma de storyboard terminado con IA — tu escena es la referencia, no solo un prompt. Pulsa <b>AI Frames</b> en la barra (una ventana aparte; nada más cambia).</p>
+        <ul>
+          <li><b>Referencia</b>: la <b>cámara del plano</b> activo o la <b>vista actual</b>, en el cabezal. La app renderiza el fotograma (con luz plana por defecto), un <b>mapa de profundidad</b> exacto, un <b>mapa de regiones</b> (un color por objeto) y <b>líneas</b>, y sabe quién está dónde. Actualiza tras mover el cabezal o la vista.</li>
+          <li><b>Modelo</b>: <b>MOSS</b> (MOSS-Image con su control de color/profundidad), <b>Flux</b> (Flux.1 Depth — composición desde la profundidad) o <b>Qwen</b> (Qwen Image Edit redibuja el fotograma y acepta fotos de las caras).</li>
+          <li><b>Estilo</b>: diez looks — boceto a lápiz, tinta y rotulador, carboncillo, foto cinematográfica, cine negro, animación 3D, anime, cómic, acuarela, pintura de concepto. Las miniaturas son vistas previas de tu propio fotograma hasta que pulses <b>Make the 10 style samples</b> en Settings (entonces son muestras reales de IA, por modelo).</li>
+          <li><b>Caras</b> (opcional): una foto por actor en cuadro (la usa Qwen). <b>Notas</b> (opcional): lo que el fotograma no puede mostrar. El texto que acompaña al fotograma se escribe solo a partir de la escena.</li>
+          <li><b>Variantes</b> 1–4 y <b>Generate</b>. Los fotogramas quedan con la escena; ★ elige uno para su plano, y la opción <b>AI frames</b> del storyboard PDF lo imprime en lugar del render 3D. Con <b>make the missing ones</b> (modelo y estilo elegidos allí mismo) cada plano sin fotograma ★ recibe uno durante la exportación, desde su cámara.</li>
+        </ul>
+        <p><b>Settings</b>: la dirección de ComfyUI (tu GPU — gratis e ilimitado — o una alquilada como RunPod). Inicia ComfyUI con <code>--enable-cors-header</code>. La app lee qué nodos y modelos tiene el servidor, elige los archivos por nombre y dice exactamente qué falta. Puedes sustituir el workflow de un modelo por el tuyo (ComfyUI → Workflow → Export (API)) con los tokens <code>{{prompt}}</code>, <code>{{negative}}</code>, <code>{{color}}</code>, <code>{{depth}}</code>, <code>{{regions}}</code>, <code>{{edges}}</code>, <code>{{face1}}</code>, <code>{{face2}}</code>, <code>{{seed}}</code>, <code>{{width}}</code>, <code>{{height}}</code>, <code>{{hold}}</code>. Sin ComfyUI el resto de la app funciona igual.</p>
+        <h3 id="screenplay">Guion → Película</h3>
+        <figure><img src="img/screenplay.jpg" alt="Guion a película: el texto y el plan de la película" /></figure>
+        <p>Construye una película entera a partir de un guion. Ábrelo desde el menú de película (<b>Screenplay → Film…</b>) o desde el Director (<b>Whole screenplay → film</b>) y pega el guion — en cualquier idioma y formato; el resultado está en inglés.</p>
+        <p>O pulsa <b>Open script file</b> (o suelta el archivo en el cuadro de texto): <b>PDF</b>, Final Draft (<b>.fdx</b>), <b>Fountain</b>, Word (<b>.docx</b>) o texto plano. Los PDF en persa y árabe se leen de derecha a izquierda. Un PDF escaneado sin capa de texto se añade como imágenes de página (hasta 20) para que Claude las lea — con tu clave API; en un chat de Claude, adjunta tú las páginas. Revisa el texto antes de planificar.</p>
+        <ol class="steps">
+          <li><b>Plan with Claude</b> (clave de API o claude.ai), o <b>Copy for Claude chat</b> → pégalo en tu chat de Claude → pega la respuesta → <b>Read plan</b>. Puedes añadir <b>imágenes de storyboard</b>: se envían con tu clave de API; en un chat de Claude, adjúntalas tú.</li>
+          <li>Revisa el plan: cada escena con su encabezado, secuencia, localización, reparto y planos. Los lugares usados por varias escenas aparecen como <i>shared set</i>.</li>
+          <li>Elige <b>New film</b> o <b>Add to this film</b> y pulsa <b>Build film</b>. Cada escena se construye por turno: su decorado, reparto, luz y hora del día, <b>blocking con tiempos</b> (los personajes esperan y luego caminan / trotan / corren a sus marcas en los segundos indicados) y planos que empiezan donde ocurre su momento. Un lugar usado de nuevo reutiliza el mismo decorado (enlazado: los cambios del decorado llegan a todas las escenas).</li>
+        </ol>
+        <div class="tip"><b>Consejo.</b> Cada escena conserva su propio deshacer: <kbd>Ctrl</kbd>+<kbd>Z</kbd> en una escena deshace su construcción. Ajusta después cualquier escena con el Director o a mano.</div>
+
+        <h2 id="phone">Cámara con el teléfono</h2>
+        <div class="row2">
+          <figure><img src="img/phone-dialog.jpg" alt="Diálogo Phone con código QR" /></figure>
+          <figure class="phone"><img src="img/phone-page.jpg" alt="Página de control en el teléfono" /></figure>
+        </div>
+        <p>Sostén el teléfono como una cámara: al girarlo, la cámara del plano gira con él. Funciona con la <b>aplicación de escritorio</b>, con el teléfono y la computadora en la <b>misma red Wi-Fi</b>: sin internet, sin cuenta y sin instalar ninguna app en el teléfono.</p>
+        <ol class="steps">
+          <li>Haz clic en <b>Phone</b> en la barra de herramientas. Aparece un código QR (si tu computadora tiene varias redes, elige la que usa tu teléfono).</li>
+          <li>Escanéalo con la cámara del teléfono y abre el enlace.</li>
+          <li>La primera vez, el navegador muestra una advertencia sobre el certificado: toca <b>Avanzado → Continuar</b>. Es el certificado privado de tu propia computadora; la conexión está cifrada.</li>
+          <li>Toca <b>Start camera control</b> (en iPhone, permite <i>Movimiento y orientación</i>). Gira el teléfono: la cámara lo sigue, en relación con su encuadre actual.</li>
+        </ol>
+        <table>
+          <tr><th>En el teléfono</th><th>Qué hace</th></tr>
+          <tr><td><b>REC / STOP</b></td><td>Reproduce el plano desde el principio y graba tu movimiento; cuando el plano termina (o al pulsar STOP), la toma se convierte en fotogramas clave de cámara (<kbd>Ctrl</kbd>+<kbd>Z</kbd> la deshace).</td></tr>
+          <tr><td><b>Recenter</b></td><td>Vuelve a la dirección inicial con el horizonte nivelado.</td></tr>
+          <tr><td><b>Hold</b></td><td>Suelta la cámara para que puedas reacomodarte; vuelve a tocar para retomarla sin saltos.</td></tr>
+          <tr><td><b>Botones de lente</b></td><td>14 · 18 · 24 · 35 · 50 · 85 · 135 mm.</td></tr>
+          <tr><td><b>Pad de movimiento · Deslizador vertical</b></td><td>Dolly / travelling de la cámara sobre el suelo; pedestal arriba / abajo.</td></tr>
+        </table>
+        <div class="tip"><b>Consejo.</b> En Windows, cuando se te pida, permite Previs Studio en el firewall para redes <i>privadas</i>. La página del teléfono mantiene la pantalla encendida mientras está abierta.</div>
+
+        <h2 id="animatic">Exportar una animática</h2>
+        <figure><img src="img/animatic.jpg" alt="Diálogo de exportación de animática" /></figure>
+        <p>Menú de proyecto → <b>Export animatic (video)…</b> o <kbd>Ctrl</kbd>+<kbd>E</kbd>. Elige 720p, 1080p o 4K, 24/25/30 fps, qué planos incluir y los <b>textos sobreimpresos</b> (burn-ins: plano, cámara y lente, timecode del plano, timecode continuo, nombre del proyecto). Cada plano se renderiza a través de su propia cámara, uno tras otro, con bandas (letterbox) según su relación de aspecto. El resultado es un archivo <b>MP4 (H.264)</b>, o WebM donde H.264 no esté disponible. El render es exacto por fotograma, así que incluso una computadora lenta produce un video con la temporización perfecta.</p>
+
+        <h2 id="storyboard">Storyboard (PDF)</h2>
+        <figure><img src="img/storyboard.jpg" alt="Una página de storyboard" /></figure>
+        <p>Menú del proyecto → <b>Export storyboard (PDF)…</b> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>), o el botón de storyboard en la línea de tiempo de la película para toda la película. Cada plano se convierte en una viñeta renderizada desde su propia cámara, numerada <i>escena.plano</i>, con su duración, tamaño de plano, ángulo, lente, movimiento de cámara, quién está en cuadro y qué hace, y tus notas (el persa y otros alfabetos se imprimen bien). Los planos en los que se mueve la cámara o un actor llevan su último fotograma como un pequeño recuadro.</p>
+        <ul>
+          <li><b>What</b>: esta escena, toda la película o una secuencia. Cada escena empieza en una página nueva.</li>
+          <li><b>Panels per page</b>: 1, 2, 3 (lista de planos: imagen y texto lado a lado), 4 o 6 · A4 o Letter · horizontal o vertical.</li>
+          <li><b>Show</b>: cámara y acción, notas, fotograma final.</li>
+        </ul>
+
+        <h2 id="productad">Estudio de anuncios de producto (Product Ad)</h2>
+        <p>Cambia la barra de <b>Film</b> a <b>Product Ad</b> para anuncios de producto. Esta versión incluye el <b>frasco de perfume de lujo</b> totalmente personalizable; cualquier modelo importado puede usarse como producto (<b>Products → Use selected object as product</b>).</p>
+        <ol class="steps">
+          <li><b>Products → New product ad</b>: un proyecto nuevo con plató, el frasco, una cámara héroe e iluminación de lujo.</li>
+          <li><b>Templates</b>: elige duración (6, 10, 15 o 30 s) y formato y pulsa <b>Build</b>. Obtienes planos reales y editables, cada uno con su movimiento de cámara, animación del producto y texto. Se deshace en un paso.</li>
+          <li>Pestaña <b>Product</b>: forma, tamaño, tapón, nivel de líquido, etiqueta; un material por pieza (vidrio, oro, cromo…); sube arte de etiqueta y un logo para el tapón; guárdalo en <b>My Library</b>.</li>
+          <li><b>Animate</b>: 30 animaciones para este producto (las miniaturas muestran el movimiento real). Haz clic para aplicar y previsualizar. Ajusta inicio, duración, velocidad, intensidad, curva, dirección, bucle y añade una flotación continua encima. Las que no encajan (p. ej. de dos productos con uno solo) se señalan antes de aplicarse.</li>
+          <li><b>Camera</b>: 30 movimientos encuadrados según el tamaño del producto (nunca lo atraviesan). Se convierten en claves de cámara normales editables en la línea de tiempo.</li>
+          <li><b>Light</b> / <b>Lighting</b>: 16 looks de estudio con luces reales; fondo, suelo (mate, brillo, espejo), reflejos y tu propio HDRI.</li>
+          <li><b>Brand</b>: nombre, colores, fuente, logo; titular, precio, llamada a la acción… con animaciones de entrada y salida. Se ven sobre el encuadre (<kbd>C</kbd>) con zonas seguras y se incrustan en las exportaciones.</li>
+          <li><b>Effects</b>: barrido de luz, partículas, brillo, cambio de color de fondo, revelado desde la sombra, viñeta, condensación.</li>
+          <li><b>Export</b>: vídeo del anuncio, storyboard PDF, prompts y fotogramas para IA, lista de planos CSV, JSON del anuncio, GLB del producto, fotogramas hasta 4K, PNG transparente, secuencia PNG.</li>
+        </ol>
+        <div class="note"><b>Aún no:</b> las demás categorías de producto, profundidad de campo renderizada, estelas de movimiento y una biblioteca en línea compartida (comparte presets como archivos de paquete desde <b>My Library</b>).</div>
+
+        <h2 id="aiexport">Prompt y fotogramas para IA</h2>
+        <figure><img src="img/aiexport.jpg" alt="Diálogo AI Prompt" /></figure>
+        <p>Convierte un plano de previs en lo que necesita un generador de vídeo con IA: un <b>primer</b> y un <b>último fotograma</b> limpios a través de la cámara del plano, y un <b>prompt en inglés</b> escrito a partir de lo que realmente hay en tu escena. Pulsa <b>AI Prompt</b> en la barra de herramientas (<kbd>Shift</kbd>+<kbd>A</kbd>).</p>
+        <ul>
+          <li><b>Qué lee del plano</b>: el tamaño de plano (según cuánto muestra el encuadre del personaje principal), el ángulo y la altura de cámara, la focal, el movimiento de cámara (dolly, travelling lateral, panorámica, tilt, grúa, arco, zoom, cámara en mano) y su velocidad, quién está en cuadro, dónde, hacia dónde mira, qué hace y hacia dónde camina, el encuadre sobre el hombro, el cambio de foco, las luces y la hora del día, y tus notas del plano. No se inventa nada.</li>
+          <li><b>Preajustes</b>: Text to video, Image to video, Seedance, Kling, Veo y Runway. Cambian el orden y el énfasis (Runway: corto, solo movimiento, sin prompt negativo). Los preajustes de imagen a vídeo describen solo lo que se mueve — adjunta el primer fotograma exportado.</li>
+          <li><b>Style</b>: tus propias palabras («cinematic, 35mm film, moody»), separadas de los datos de la escena.</li>
+          <li>Edita el prompt libremente (<i>regenerate</i> recupera el generado) o usa <b>Edit template</b> para reescribir un preajuste con marcadores como <code>{{shot}}</code>, <code>{{camera}}</code>, <code>{{subjects}}</code>, <code>{{lighting}}</code>.</li>
+          <li><b>Copy prompt</b>, o guárdalo como <b>TXT</b> o <b>JSON</b> estructurado. <b>Save</b> bajo cada fotograma lo renderiza a 1280–3840 px, PNG o JPEG, con guías de tercios si quieres.</li>
+          <li><b>Export … shots (ZIP)</b>: una carpeta por plano (primer y último fotograma, <code>prompt.txt</code>, <code>shot.json</code>), más <code>all-prompts.txt</code>, <code>shots.json</code> y una hoja de contactos.</li>
+        </ul>
+        <div class="tip"><b>Consejo.</b> Los generadores funcionan mejor con clips de 5–10 segundos. Divide los planos más largos, o usa el primer y el último fotograma como imágenes de inicio y fin si el generador lo permite.</div>
+
+        <h2 id="projects">Proyectos y archivos</h2>
+        <ul>
+          <li>El trabajo se <b>guarda automáticamente</b> (el indicador junto al nombre del proyecto; <kbd>Ctrl</kbd>+<kbd>S</kbd> guarda al momento). El botón <b>P</b> / casa a la izquierda de la barra (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>) va a <b>Home</b> con todas tus películas; <kbd>Esc</kbd> vuelve. <kbd>Ctrl</kbd>+<kbd>O</kbd> abre la lista de escenas; el menú de proyecto incluye New, Rename y Save a copy.</li>
+          <li><b>Save to file…</b> escribe un archivo <code>.previs.json</code> (en la aplicación de escritorio, con el diálogo Guardar habitual). <b>Open file…</b> carga uno. Arrastra un archivo de proyecto a la ventana para abrirlo.</li>
+          <li>Deshaz / rehaz todo con <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>.</li>
+        </ul>
+
+        <h2 id="shortcuts">Atajos de teclado</h2>
+        <p>En macOS usa <kbd>⌘</kbd> donde dice <kbd>Ctrl</kbd>.</p>
+        <table>
+          <tr><th>Teclas</th><th>Acción</th></tr>
+          <tr><td><kbd>Q</kbd> <kbd>W</kbd> <kbd>E</kbd> <kbd>R</kbd></td><td>Seleccionar · mover · rotar · escalar</td></tr>
+          <tr><td><kbd>X</kbd> · <kbd>S</kbd> · <kbd>G</kbd></td><td>Ejes globales/locales · ajuste · cuadrícula</td></tr>
+          <tr><td><kbd>U</kbd></td><td>Luz plana: todas las luces de la escena, el sol / la luna y las sombras apagadas, con una luz neutra uniforme — ver el plano sin su iluminación (solo vista; pulsa de nuevo para volver)</td></tr>
+          <tr><td><kbd>F</kbd> · <kbd>End</kbd></td><td>Encuadrar la selección · dejar caer sobre la superficie inferior</td></tr>
+          <tr><td><kbd>H</kbd> · <kbd>Alt</kbd>+<kbd>H</kbd></td><td>Ocultar selección · mostrar todo</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd> · <kbd>Delete</kbd></td><td>Duplicar · eliminar</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> · <kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>Agrupar · desagrupar · seleccionar todo</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Deshacer · rehacer</td></tr>
+          <tr><td><kbd>C</kbd> · <kbd>Shift</kbd>+<kbd>C</kbd> · <kbd>P</kbd></td><td>Vista de cámara · nueva cámara desde la vista · modo piloto</td></tr>
+          <tr><td><kbd>[</kbd> <kbd>]</kbd></td><td>Cámara anterior / siguiente</td></tr>
+          <tr><td><kbd>N</kbd> · <kbd>1</kbd>–<kbd>9</kbd> · <kbd>0</kbd></td><td>Nuevo plano · ir al plano · escena base</td></tr>
+          <tr><td><kbd>Space</kbd> · <kbd>Home</kbd></td><td>Reproducir / pausar · ir al inicio</td></tr>
+          <tr><td><kbd>K</kbd> · <kbd>Shift</kbd>+<kbd>K</kbd></td><td>Añadir clave (objetos seleccionados; si no, la cámara) · Auto Key</td></tr>
+          <tr><td><kbd>←</kbd> <kbd>→</kbd> · <kbd>Shift</kbd>+<kbd>←</kbd> <kbd>→</kbd></td><td>Fotograma anterior / siguiente · clave anterior / siguiente</td></tr>
+          <tr><td><kbd>D</kbd> · <kbd>Shift</kbd>+<kbd>D</kbd></td><td>Director · Draw Path</td></tr>
+          <tr><td><kbd>Shift</kbd>+<kbd>F</kbd></td><td>Línea de tiempo de la película</td></tr>
+          <tr><td><kbd>Shift</kbd>+<kbd>A</kbd></td><td>Prompt y fotogramas para IA</td></tr>
+          <tr><td><kbd>L</kbd> · <kbd>Shift</kbd>+<kbd>L</kbd></td><td>Pestaña Lighting · añadir una luz spot</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd> · <kbd>Ctrl</kbd>+<kbd>O</kbd> · <kbd>Ctrl</kbd>+<kbd>E</kbd></td><td>Guardar · proyectos · exportar animática</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td><td>Storyboard (PDF)</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd></td><td>Inicio (todas las películas)</td></tr>
+          <tr><td><kbd>Enter</kbd> · <kbd>Esc</kbd></td><td>Aplicar / cancelar una trayectoria dibujada · borrar la selección</td></tr>
+        </table>
+
+        <h2 id="trouble">Solución de problemas</h2>
+        <table>
+          <tr><th>Problema</th><th>Prueba esto</th></tr>
+          <tr><td>La página del teléfono no se abre</td><td>El teléfono y la computadora deben estar en la misma red Wi-Fi (no en una red de invitados). Elige la dirección correcta debajo del código QR. En Windows, permite la app en redes privadas en el firewall.</td></tr>
+          <tr><td>El teléfono se conecta, pero la cámara no se mueve</td><td>Toca <b>Start camera control</b>. En iPhone: Ajustes → Safari → <i>Acceso a movimiento y orientación</i>. Asegúrate de que haya un plano activo en la app.</td></tr>
+          <tr><td>“Connect Claude” indica que la clave no se acepta</td><td>Copia la clave completa (empieza por <code>sk-ant-</code>) y comprueba que tu cuenta de Anthropic tenga saldo.</td></tr>
+          <tr><td>La vista va lenta</td><td>Oculta lo que no necesites (<kbd>H</kbd>), cierra otras apps que usen mucho la GPU, usa la aplicación de escritorio en una computadora con GPU dedicada.</td></tr>
+          <tr><td>macOS dice que la app está dañada</td><td>Consulta <a href="#install">Instalación</a>: la app aún no está notarizada; usa <i>Abrir igualmente</i>.</td></tr>
+        </table>
+
+        <h2 id="about">Acerca de</h2>
+        <footer class="credits">
+          <div style="color: var(--faint); font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em">Creado por</div>
+          <div class="who">Saeed Salarvand</div>
+          <div class="links">
+            <a href="https://instagram.com/Saeed__salarvand" target="_blank" rel="noopener noreferrer">Instagram · Saeed__salarvand</a>
+            <a href="https://t.me/Saeed_VfX" target="_blank" rel="noopener noreferrer">Telegram · Saeed_VfX</a>
+            <a href="https://www.linkedin.com/in/saeed-salarvand/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p style="color: var(--faint); font-size: 13px; margin: 12px 0 0">© 2026 Saeed Salarvand. Todos los derechos reservados.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

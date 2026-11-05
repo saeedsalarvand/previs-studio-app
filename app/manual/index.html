@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Previs Studio · User manual</title>
+    <link rel="stylesheet" href="manual.css" />
+    <style>
+      .pick { max-width: 720px; margin: 12vh auto; padding: 24px; text-align: center; }
+      .pick .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+      .pick a { display: block; padding: 22px 12px; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); color: var(--text); font-size: 20px; font-weight: 600; }
+      .pick a:hover { border-color: var(--accent); text-decoration: none; }
+      .pick small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; margin-top: 4px; }
+      @media (max-width: 600px) { .pick .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <div class="pick">
+      <div class="logo" style="width: 56px; height: 56px; margin: 0 auto; font-size: 26px; border-radius: 14px">P</div>
+      <h1 style="margin-top: 16px">Previs Studio — User manual</h1>
+      <p class="lead">Choose your language · Elige tu idioma</p>
+      <div class="grid">
+        <a href="en.html">English<small>Full guide</small></a>
+        <a href="fa.html">Persian<small>Complete guide</small></a>
+        <a href="es.html" lang="es">Español<small>Guía completa</small></a>
+      </div>
+    </div>
+  </body>
+</html>

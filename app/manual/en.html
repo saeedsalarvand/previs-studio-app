@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Previs Studio · User manual</title>
+    <meta name="description" content="Complete user manual for Previs Studio — 3D previs and virtual directing for filmmakers." />
+    <link rel="stylesheet" href="manual.css" />
+  </head>
+  <body dir="ltr">
+    <header class="top">
+      <div class="logo">P</div>
+      <span class="name">Previs Studio · User manual</span>
+      <nav class="langs" aria-label="Language">
+        <a href="en.html" class="on" lang="en">English</a>
+        <a href="fa.html">Persian</a>
+        <a href="es.html" lang="es">Español</a>
+      </nav>
+    </header>
+    <div class="layout">
+      <nav class="toc" aria-label="Contents">
+        <ol>
+          <li><a href="#welcome">Welcome</a></li>
+          <li><a href="#install">Install &amp; first launch</a></li>
+          <li><a href="#interface">The interface</a></li>
+          <li><a href="#navigate">Moving around the 3D view</a></li>
+          <li><a href="#build">Building a scene</a></li>
+          <li><a href="#models">Importing your own models</a></li>
+          <li><a href="#references">Reference images</a></li>
+          <li><a href="#cameras">Cameras &amp; lenses</a></li>
+          <li><a href="#shots">Shots</a></li>
+          <li><a href="#film">Film, scenes &amp; sets</a></li>
+          <li><a href="#keyframes">Timeline &amp; keyframes</a></li>
+          <li><a href="#motion">Camera motion</a></li>
+          <li><a href="#drawpath">Draw Path (camera)</a></li>
+          <li><a href="#objects">Animating characters &amp; vehicles</a></li>
+          <li><a href="#audio">Sound (dialogue, music, effects)</a></li>
+          <li><a href="#lighting">Lighting</a></li>
+          <li><a href="#director">Director (AI scene building)</a></li>
+          <li><a href="#aiframes">AI Frames</a></li>
+          <li><a href="#screenplay">Screenplay → Film</a></li>
+          <li><a href="#phone">Phone camera</a></li>
+          <li><a href="#animatic">Exporting an animatic</a></li>
+          <li><a href="#storyboard">Storyboard (PDF)</a></li>
+          <li><a href="#productad">Product Ad studio</a></li>
+          <li><a href="#aiexport">AI prompt &amp; frames</a></li>
+          <li><a href="#projects">Projects &amp; files</a></li>
+          <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+          <li><a href="#trouble">Troubleshooting</a></li>
+          <li><a href="#about">About</a></li>
+        </ol>
+      </nav>
+      <main>
+        <h1 id="welcome">Previs Studio</h1>
+        <p class="lead">3D previs and virtual directing for filmmakers: block a scene, place actors and props, set up cameras and lenses, shoot your coverage, animate, light — and export an animatic.</p>
+        <figure><img src="img/overview.jpg" alt="Previs Studio main window" /><figcaption>The main window: asset library (left), 3D view (centre), scene and inspector (right), shots and timeline (bottom).</figcaption></figure>
+        <p>Previs Studio runs in three ways, all with the same features:</p>
+        <ul>
+          <li><b>Desktop app</b> for Windows and macOS — works completely offline. Phone camera control is available here.</li>
+          <li><b>Web version</b> — open the website and work in the browser, nothing to install.</li>
+          <li>Projects are plain <code>.previs.json</code> files you can move between both.</li>
+        </ul>
+
+        <h2 id="install">Install &amp; first launch</h2>
+        <h3>Windows</h3>
+        <ol class="steps">
+          <li>Download <code>Previs-Studio-Setup.exe</code> from the download page.</li>
+          <li>Run it. If Windows SmartScreen shows “Windows protected your PC”, click <b>More info → Run anyway</b> (the installer is not code-signed yet).</li>
+          <li>Choose the install folder and finish. Start Previs Studio from the Start menu or the desktop shortcut.</li>
+        </ol>
+        <h3>macOS</h3>
+        <ol class="steps">
+          <li>Download <code>Previs-Studio-mac.dmg</code> (one build for Apple Silicon and Intel).</li>
+          <li>Open it and drag <b>Previs Studio</b> into <b>Applications</b>.</li>
+          <li>The first time, <b>right-click the app → Open → Open</b>. If macOS says the app “is damaged” or cannot be checked, open <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b>, or run <code>xattr -dr com.apple.quarantine "/Applications/Previs Studio.app"</code> in Terminal.</li>
+        </ol>
+        <h3>Web version</h3>
+        <p>Open the web app link from the download page in Chrome, Edge or Safari (a computer with a reasonably modern graphics card is recommended). Your projects are saved in that browser.</p>
+        <h3>Home</h3>
+        <figure><img src="img/home.jpg" alt="Home screen" /></figure>
+        <p>The app opens on <b>Home</b>, not on the last film. On the left: <b>New film</b> (title and first scene), <b>Sample film</b> (a furnished living room with two actors and three shots), <b>From a screenplay</b> (a new film, then the Screenplay → Film window) and <b>Open file…</b>. On the right: <b>Continue</b> (the film you worked on last) and <b>All films</b>, newest first, with search and sorting by date or name. Each card shows the cover, scenes, shots, length and when it was last edited; its <b>⋯</b> menu has Open, Rename, Duplicate and Delete. Drop a <code>.previs.json</code> file on Home to open it. Tick <b>Open the last film at launch</b> to skip Home. Home also shows the creator — <b>Saeed Salarvand</b> — with his Instagram, Telegram and LinkedIn; the “Crafted by” credit in the bottom-right corner opens the About card.</p>
+
+        <h3>Updates</h3>
+        <p>The desktop app checks for a new version each time it starts (and every few hours). <b>Windows</b>: the update downloads in the background, then <b>Restart and update</b> installs it — or it installs when you close the app. <b>macOS</b>: you are told a new version is out and <b>Download</b> opens it (macOS only lets signed apps replace themselves). <b>Help → Check for Updates…</b> checks now. Your projects are kept.</p>
+
+        <h2 id="interface">The interface</h2>
+        <table>
+          <tr><th>Area</th><th>What it is for</th></tr>
+          <tr><td><b>Toolbar</b> (top)</td><td>Project menu, undo / redo, move · rotate · scale tools, snapping, grid, and the big buttons: <b>Director</b>, <b>Draw Path</b>, <b>Phone</b>. On the right: the active shot and whether edits apply to all shots or only this shot.</td></tr>
+          <tr><td><b>Assets</b> (left)</td><td>400 low-poly models in 15 categories: characters, animals, furniture, lighting fixtures, architecture, buildings, vehicles, military, industrial, nature, street, sports, props, film gear and blocking shapes. Search, filter, double-click to add or drag into the view.</td></tr>
+          <tr><td><b>3D view</b> (centre)</td><td>The editor view (free) or a camera view (exactly what a shot camera sees). A small picture-in-picture shows the active camera.</td></tr>
+          <tr><td><b>Scene</b> (right, top)</td><td>Everything in the scene, grouped: cameras, characters, animals, props, vehicles, lights, environment. Click to select, eye icon to hide, lock to protect.</td></tr>
+          <tr><td><b>Inspector · Camera Motion · Lighting</b> (right)</td><td>Settings for the selection; the motion layers of the shot camera; lights, setups, time of day and exposure.</td></tr>
+          <tr><td><b>Shots</b> (bottom left)</td><td>Your coverage as thumbnails. Click a shot to make it active; drag to reorder.</td></tr>
+          <tr><td><b>Timeline</b> (bottom)</td><td>Play, scrub, keyframes of the shot camera and of every animated object.</td></tr>
+        </table>
+
+        <h2 id="navigate">Moving around the 3D view</h2>
+        <table>
+          <tr><th>Mouse / key</th><th>Editor view</th></tr>
+          <tr><td>Left drag</td><td>Orbit around the point you look at</td></tr>
+          <tr><td>Middle drag, or <kbd>Shift</kbd> + left drag</td><td>Pan</td></tr>
+          <tr><td>Wheel</td><td>Zoom towards the cursor</td></tr>
+          <tr><td>Hold right button + <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, <kbd>Q</kbd>/<kbd>E</kbd></td><td>Fly (mouse looks around; <kbd>Shift</kbd> = faster, wheel = fly speed)</td></tr>
+          <tr><td><kbd>F</kbd></td><td>Frame the selection (or the whole scene)</td></tr>
+        </table>
+        <p>Press <kbd>C</kbd> to look <b>through the shot camera</b> and <kbd>C</kbd> again to come back. In camera view, piloting (<kbd>P</kbd>) moves the camera itself:</p>
+        <table>
+          <tr><th>Camera view input</th><th>What the camera does</th></tr>
+          <tr><td>Left drag</td><td>Pan / tilt (sensitivity follows the lens)</td></tr>
+          <tr><td>Middle drag</td><td>Truck left/right and pedestal up/down</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + middle drag</td><td>Dolly in / out</td></tr>
+          <tr><td>Hold right button + <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, <kbd>Q</kbd>/<kbd>E</kbd></td><td>Move the camera through the set</td></tr>
+          <tr><td>Wheel · <kbd>Alt</kbd>/<kbd>Ctrl</kbd> + wheel</td><td>Dolly · zoom (focal length)</td></tr>
+        </table>
+        <figure><img src="img/camera-view.jpg" alt="Camera view" /><figcaption>Camera view with the lens bar (focal lengths, aspect ratio, guides).</figcaption></figure>
+
+        <h2 id="build">Building a scene</h2>
+        <ol class="steps">
+          <li><b>Add things</b>: double-click an asset, or drag it onto the floor, a table, a shelf… it lands on the surface under the cursor.</li>
+          <li><b>Place them</b>: select, then <kbd>W</kbd> move · <kbd>E</kbd> rotate · <kbd>R</kbd> scale (<kbd>Q</kbd> back to select). <kbd>S</kbd> toggles snapping, <kbd>X</kbd> world/local axes, <kbd>End</kbd> drops the selection onto what is below.</li>
+          <li><b>Solid world</b> (brick-wall button in the toolbar, on by default): nothing passes through anything. A character or piece of furniture you drag stops at walls and furniture and slides along them (stacking on top still works); a walk you key or draw goes round what is in the way (detour keys are added and re-planned when you change the walk); the Director never places people inside furniture and keeps them clear of walls; arms and hands ease back instead of going into a wall, a table or another person. Turn it off to overlap things on purpose.</li>
+          <li><b>Organise</b>: <kbd>Ctrl</kbd>+<kbd>D</kbd> duplicate, <kbd>Ctrl</kbd>+<kbd>G</kbd> group, <kbd>H</kbd> hide, lock in the Scene list, rename in the Inspector.</li>
+          <li><b>Give life</b>: in the Inspector, <b>Animation</b> adds a looping action (idle, talk, sit, type, wave, walk in place, wheels turning, birds flying…). To make things travel from A to B, see <a href="#objects">Animating characters &amp; vehicles</a>.</li>
+        </ol>
+        <div class="tip"><b>Tip.</b> Large spaces work: buildings, towers, roads, military vehicles and street kits are in the library, and the far clipping distance reaches several kilometres.</div>
+
+        <h2 id="models">Importing your own models</h2>
+        <p>Bring in your own 3D models — <b>.glb</b>, <b>.gltf</b> (self-contained), <b>.fbx</b> or <b>.obj</b>. Click <b>Import</b> at the top of the Assets panel, or drop the file onto the window.</p>
+        <ul>
+          <li><b>Size</b>: files in centimetres or millimetres are recognised and converted to metres; type the real height to change it. The model stands on the floor, centred.</li>
+          <li><b>Look</b>: keep the model’s own materials, or use the clay look of the rest of the scene.</li>
+          <li><b>Kind</b>: prop, character, animal, vehicle or architecture — where it appears in the Scene list and how the AI prompts describe it.</li>
+          <li>Imported models are in <b>Assets → My models</b> for every project and scene, and work in reusable sets. The file is stored once; a saved project file includes it, so it opens on any computer.</li>
+          <li>Imported models are static: move them with keyframes (<kbd>K</kbd>) or Draw path — walk cycles are for the built-in characters.</li>
+        </ul>
+        <div class="note"><b>Note.</b> Draco-compressed files and .gltf files with separate texture files are not supported yet: export as .glb without Draco compression.</div>
+
+        <h2 id="references">Reference images</h2>
+        <figure><img src="img/reference.jpg" alt="A reference image over the camera frame" /></figure>
+        <ul>
+          <li><b>Over the camera frame</b> — select nothing so the shot settings show in the Inspector, then <b>Reference → Add image…</b>: a storyboard panel, a frame from a film you want to match, a location photo. In camera view (<kbd>C</kbd>) it lies over the frame; set its opacity, <b>Fit</b> (whole image) or <b>Fill</b> (cover the frame), hide it with the eye, replace or remove it. Each shot has its own; it is saved with the project and undoable.</li>
+          <li><b>As a panel in the scene</b> — <b>Import</b> in the Assets panel (or drop the file on the window) also takes <b>.png, .jpg, .webp</b>: the image stands on the floor as a double-sided panel, 1.5 m high by default. Use it as a backdrop, a view outside a window, or a mood board next to the set; it is in <b>My models</b> like imported models.</li>
+        </ul>
+
+        <h2 id="cameras">Cameras &amp; lenses</h2>
+        <p>Add a camera exactly where you are looking with <kbd>Shift</kbd>+<kbd>C</kbd>. Select a camera to set in the Inspector: focal length, sensor / film back, aspect ratio (2.39, 2.35, 1.85, 16:9, 4:3, 3:2, 1:1, 4:5, 9:16), focus distance and aperture, clipping. <kbd>[</kbd> and <kbd>]</kbd> cycle through cameras. The camera view shows the exact frame with safe areas and guides.</p>
+
+        <h2 id="shots">Shots</h2>
+        <p>A <b>shot</b> is a camera plus a duration and its own adjustments. Press <kbd>N</kbd> (or <b>New shot</b>) to create a shot from the active camera, <kbd>1</kbd>–<kbd>9</kbd> to switch, <kbd>0</kbd> for the base scene.</p>
+        <ul>
+          <li><b>All shots / This shot</b> (top right): choose whether moving an object changes it everywhere, or only in the active shot (a “cheat” for this angle). Changed objects show a badge with <i>Reset to scene</i>.</li>
+          <li>Each shot keeps its own size, angle, notes, lighting tweaks and exposure — the shot list is built for you.</li>
+        </ul>
+
+        <h2 id="film">Film, scenes &amp; sets</h2>
+        <figure><img src="img/film.jpg" alt="Film timeline with two scenes" /></figure>
+        <p>A <b>film</b> is made of <b>sequences</b>, sequences of <b>scenes</b>, scenes of <b>shots</b>. Every scene has its own 3D set, lighting and time of day, cast, keyframes, shots and undo. The film button in the toolbar (next to the scene name, e.g. <i>Sc 2/5</i>) lists every scene; click one to open it. Projects you made before films each became a film of their own.</p>
+        <ul>
+          <li><b>New scene…</b> — name, sequence, and an empty set or a set from the library. <b>Duplicate this scene</b> copies set, cast, lights and shots. <b>Add a project as a scene…</b> copies another project into this film (the original stays as it is).</li>
+          <li><b>Film timeline</b> (<kbd>Shift</kbd>+<kbd>F</kbd>) — the whole film in one row: sequences, coloured scenes and their shots sized by duration, numbered <i>scene.shot</i> (3.2), with the running length. Click a shot to open its scene at that shot. Drag a scene’s header to reorder it, also into another sequence. Double-click names to rename. The film’s own undo / redo buttons undo order and name changes.</li>
+          <li><b>Play film</b> plays shot after shot and opens the next scene when one ends. <b>Export film animatic</b> (or <i>Whole film</i> / a sequence in the animatic dialog) renders every scene into one video.</li>
+        </ul>
+        <h3>Reusable sets</h3>
+        <p>Build a location once and use it in many scenes — the same bedroom at night in scene 1 and in daylight in scene 5, each with its own lighting, actors and animation.</p>
+        <ol class="steps">
+          <li>Open the <b>Set library</b> (film menu or the film timeline), name the set and click <b>Save set</b>. By default architecture, furniture &amp; props and vehicles are saved; lights and characters stay in the scene unless you tick them.</li>
+          <li>In <b>New scene…</b> pick the set, or click <b>Place in scene</b> in the library. The items are linked to the set: move, change or delete them freely in that scene — only that scene changes.</li>
+          <li>To change the set itself, edit it in a scene that uses it and choose <b>New version of “…”</b> → <b>Save new version</b>. Other scenes show <i>“The set has a new version”</i>: <b>Update scene</b> applies it (<kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes it) and keeps what that scene changed itself; <b>Later</b> asks again next time; <b>Detach</b> makes the items the scene’s own.</li>
+        </ol>
+        <div class="tip"><b>Tip.</b> Models are shared, not copied: a set placed in ten scenes stores only the list of its items in each scene.</div>
+
+        <h2 id="keyframes">Timeline &amp; keyframes</h2>
+        <ol class="steps">
+          <li>Put the playhead at 0 s, frame the shot, press <kbd>K</kbd>.</li>
+          <li>Move the playhead, change the framing, press <kbd>K</kbd> again. Press <kbd>Space</kbd> to play.</li>
+        </ol>
+        <p>Drag diamonds to retime them, <kbd>Delete</kbd> removes, <kbd>Ctrl</kbd>+<kbd>C</kbd>/<kbd>V</kbd> copies camera keys, the <b>Interpolation</b> menu sets Smooth / Linear / Ease / Hold. <b>Auto Key</b> (<kbd>Shift</kbd>+<kbd>K</kbd>) keys every camera change automatically. Drag the end marker to change the shot length. <kbd>←</kbd>/<kbd>→</kbd> step one frame, <kbd>Shift</kbd>+<kbd>←</kbd>/<kbd>→</kbd> jump between keys. The <b>filter</b> button at the right of the timeline toolbar keeps rows for the <b>selected</b> objects only (as in Blender); other animated objects fold into one line — click it to show them all. The film strip above can be hidden with its arrow (or <kbd>Shift</kbd>+<kbd>F</kbd>); its <b>⋯</b> menu has sequences, the set library, exports and the film’s undo.</p>
+
+        <h2 id="motion">Camera motion</h2>
+        <figure><img src="img/camera-motion.jpg" alt="Camera Motion panel" /></figure>
+        <p>The <b>Camera Motion</b> tab turns simple keys into cinematic moves without touching the keys themselves. Pick a <b>move</b> (dolly in / out, push in, pan, tilt, truck, pedestal, crane, jib, arc, orbit, circular, zoom, dolly zoom, follow, lead, over-the-shoulder, parallax, reveal, handheld…) and its amount, or layer effects:</p>
+        <table>
+          <tr><th>Layer</th><th>What it does</th></tr>
+          <tr><td>Timing</td><td>Ease in/out, constant speed, speed ramps, holds</td></tr>
+          <tr><td>Path</td><td>Shape the A→B move into an arc, orbit, crane or straight line</td></tr>
+          <tr><td>Smoothing · Polish</td><td>Remove bumps; analyse and fix jerky moves</td></tr>
+          <tr><td>Tracking · Composition</td><td>Keep a subject in frame, on a chosen screen position</td></tr>
+          <tr><td>Rig · Shake</td><td>Tripod, handheld, shoulder, gimbal, steadicam, dolly, slider, crane, jib, drone, car mount, cable cam; camera shake by style</td></tr>
+        </table>
+        <p><b>Bake</b> writes the result into plain keyframes; <b>Restore</b> brings the original take back.</p>
+
+        <h2 id="drawpath">Draw Path (camera)</h2>
+        <figure><img src="img/draw-path.jpg" alt="Draw Path" /><figcaption>Draw the camera route from above — it becomes the camera move.</figcaption></figure>
+        <ol class="steps">
+          <li>Click <b>Draw Path</b> (or <kbd>Shift</kbd>+<kbd>D</kbd>). The view switches to the top of the scene.</li>
+          <li>Draw the route with the <b>left mouse button</b>. <kbd>Shift</kbd>+drag continues the same line. Right / middle drag pans, wheel zooms.</li>
+          <li>Set the <b>start and end height</b>, where the camera <b>looks</b> (<i>Along path</i>, <i>At subject</i> — choose a character, or <i>Fixed</i>), the duration, <i>Ease</i> or <i>Constant</i> speed, smoothing and <i>Bank</i> (drone-style roll in turns).</li>
+          <li><b>Apply path</b> (or <kbd>Enter</kbd>) writes the keys on the active shot’s camera (a new camera and shot if none is active). <kbd>Esc</kbd> cancels.</li>
+        </ol>
+
+        <h2 id="objects">Animating characters &amp; vehicles</h2>
+        <figure><img src="img/object-animation.jpg" alt="A character walking along a keyed route" /><figcaption>A character walking its route; each animated object gets a green row in the timeline.</figcaption></figure>
+        <h3>With keyframes</h3>
+        <ol class="steps">
+          <li>Select the character (or car), put the playhead where the move starts and press <kbd>K</kbd> (or <b>Key here</b> in the Inspector’s <b>Movement</b> section).</li>
+          <li>Move the playhead, move the object with the gizmo — once an object has keys, moving it writes a key at the playhead automatically.</li>
+          <li>Press <kbd>Space</kbd>. The object travels between its keys.</li>
+        </ol>
+        <h3>With a drawn route</h3>
+        <figure><img src="img/object-route.jpg" alt="Drawing a route for a character" /></figure>
+        <p>In <b>Movement</b>, click <b>Draw path</b>, draw where it should go (it starts from where it stands), pick a speed — <i>Sneak / Walk / Jog / Run</i> for people, <i>15–80 km/h</i> for cars — and <b>Apply route</b>. Draw again from a later playhead to chain moves (“walk to the table, then run to the door”).</p>
+        <h3>What happens automatically</h3>
+        <ul>
+          <li><b>Gait by speed</b>: standing still → idle, slow → walk, faster → jog, fast → run, with smooth transitions. Feet do not slide: the steps follow the distance travelled. Or choose a fixed gait in <b>Gait</b>.</li>
+          <li><b>Face travel</b>: the body turns towards where it goes, and keeps facing that way when it stops. Turn it off to control rotation with keys.</li>
+          <li><b>Vehicles</b>: wheels roll by distance and the front wheels steer into turns; parked cars straighten their wheels.</li>
+          <li>Between moves, a character plays its own animation (for example <i>Talk</i> or <i>Wave</i>) if it has one.</li>
+          <li>The action is <b>shared by every shot</b> (continuity across your coverage). In a shot’s settings, <b>Action from</b> lets a shot start later in the action.</li>
+        </ul>
+
+        <h3>Changes of action over time</h3>
+        <p>In the Inspector’s <b>Animation</b> section, <b>Changes over time → At playhead</b> makes a character do something else from that moment of the scene on: stands talking, then <b>sits</b> at 6 s, then stands up and <b>waves</b> at 12 s. Change the time or the action in the list, or remove it (all undoable). Walking between keyed marks stays automatic — the action plays whenever the character stands still. The Director and Screenplay → Film write these changes too (“walks to the sofa and sits”).</p>
+
+        <h2 id="audio">Sound (dialogue, music, effects)</h2>
+        <figure><img src="img/audio.jpg" alt="A dialogue track with a sound in the timeline" /></figure>
+        <p>In the timeline, <b>Add sound → Dialogue / Music / Effects</b> puts an audio file (MP3, WAV, M4A/AAC, OGG, FLAC) at the playhead. Sounds live on the <b>scene’s continuous time</b> — the same clock the actors move on — so every shot hears the part of the scene it shows, and a line stays in sync across cuts.</p>
+        <ul>
+          <li>Each track has <b>M</b> (mute), <b>S</b> (solo) and a volume slider; a sound already on a track makes the next one go to a new track of the same kind.</li>
+          <li>Drag a sound left / right to move it in time, up / down to another track; hover it and click × to delete. Everything is undoable.</li>
+          <li>Playback plays the sound with the picture; <b>Export animatic</b> (scene, sequence or whole film) writes it into the video.</li>
+          <li>Sound files are kept once in this browser / computer and saved inside project files.</li>
+        </ul>
+
+        <h2 id="lighting">Lighting</h2>
+        <figure><img src="img/lighting.jpg" alt="Lighting panel" /></figure>
+        <ul>
+          <li><b>Setups</b>: one click places a full lighting setup around the subject and camera — three-point, high-key, low-key, Rembrandt, split, butterfly, silhouette, golden hour, moonlight, window light, neon and firelight.</li>
+          <li><b>Lights</b>: spot, point, area and sun; colour in Kelvin, intensity in stops (±1 stop buttons), softness, beam, shadows, effects (flicker, candle, fire, TV, pulse, police, lightning). <kbd>Shift</kbd>+<kbd>L</kbd> adds a spot.</li>
+          <li><b>Practicals</b>: lamps, chandeliers, sconces and other fixtures can switch on their own light (Inspector → <i>Switch on light</i>).</li>
+          <li><b>Time of day</b> moves the sun and sky; <b>Exposure</b> brightens or darkens the whole picture. Both can be set per shot.</li>
+          <li><b>Solo</b> a light to see what it does alone.</li>
+        </ul>
+
+        <h2 id="director">Director (AI scene building)</h2>
+        <figure><img src="img/director.jpg" alt="Director dialog" /></figure>
+        <p>Click <b>Director</b> (<kbd>D</kbd>). Describe the scene in six blocks — location, time, cast &amp; blocking, shots &amp; camera, lighting &amp; mood, notes — or simply write a prompt in any language (“an interrogation room, two people facing each other across a table, a hanging lamp, the camera circles them 4 times in 30 seconds”).</p>
+        <ul>
+          <li><b>Build from brief</b> works offline, without AI.</li>
+          <li><b>Generate with Claude</b> designs the set, blocking, shots, camera moves and lighting from your prompt. Review the plan, <b>Refine</b> it in plain words, then <b>Build scene</b> (one undo step). <i>Replace</i> or <i>Add to</i> the current scene.</li>
+        </ul>
+        <h3>Connecting Claude</h3>
+        <ol class="steps">
+          <li>Click the status pill at the top right of the Director (<i>Connect Claude…</i>).</li>
+          <li>Paste your Anthropic API key (create one in the Claude Console — the link is in the panel) and click <b>Save key</b>. The key is checked, then stored: in the desktop app it is encrypted by the operating system; in the web version it stays in that browser.</li>
+          <li>Choose the model: <b>Opus 5.5</b> (best plans), <b>Sonnet 5.5</b> (balanced) or <b>Haiku 5.5</b> (fastest, lowest cost).</li>
+        </ol>
+        <div class="note"><b>Note.</b> Claude is the only part that needs internet. Usage is billed to your own Anthropic account. When the app runs inside claude.ai, your Claude account is used and no key is needed.</div>
+        <h3>Without an API key: your Claude chat</h3>
+        <p>Already pay for Claude (Pro / Max)? Use it directly — no API key, no extra cost:</p>
+        <ol class="steps">
+          <li>Write the prompt (or fill the brief) and click <b>Copy for Claude chat</b>. The full instruction — format, rules, the asset catalogue and your request — is copied.</li>
+          <li>Paste it into a new chat on <b>claude.ai</b> or in the Claude app and send it.</li>
+          <li>Copy Claude’s whole reply, paste it into the box that opened in the Director, and click <b>Read plan</b>. Review it and <b>Build scene</b>.</li>
+          <li>To change something, type it in the <i>Refine</i> field and click <b>Copy for chat</b>: the current plan is included, so Claude revises it instead of starting over.</li>
+        </ol>
+
+        <div class="note"><b>Tip — where a shot starts.</b> Say it in the prompt (“the camera starts just behind Sara’s shoulder and dollies to Reza”). The plan then gives the shot a starting point (<code>"from": {"behind": "sara"}</code>), so the camera begins over that person’s shoulder instead of wherever the shot size would put it.</div>
+
+        <div class="note"><b>Wild wall.</b> Rooms the Director builds have an open front so you can film them from outside, like a stage. That front is a <i>wild wall</i>: from inside the room it is a normal wall (a close-up looking towards the front sees a wall, not black space); from outside it is see-through and casts no shadow.</div>
+
+        <h3 id="aiframes">AI Frames</h3>
+        <p>Turn any moment of the scene into a finished storyboard frame with AI — your scene stays the reference, it is not just a prompt. Press <b>AI Frames</b> in the toolbar (a separate window; nothing else changes).</p>
+        <ul>
+          <li><b>Reference</b>: the active <b>shot camera</b> or the <b>current view</b>, at the playhead. The app renders the frame (flat light by default), an exact <b>depth map</b>, a <b>region map</b> (one colour per object) and <b>line art</b>, and knows who stands where. Refresh after moving the playhead or the view.</li>
+          <li><b>Model</b>: <b>MOSS</b> (MOSS-Image with its colour/depth control), <b>Flux</b> (Flux.1 Depth — composition from the depth map) or <b>Qwen</b> (Qwen Image Edit redraws the frame itself and can take actors' face photos).</li>
+          <li><b>Style</b>: ten looks — pencil sketch, ink &amp; marker, charcoal, cinematic photo, film noir, 3D animated film, anime, comic book, watercolor, concept painting. The thumbnails are previews made from your own frame until you press <b>Make the 10 style samples</b> in Settings (then they are real AI samples, per model).</li>
+          <li><b>Faces</b> (optional): a photo per actor in frame (used by Qwen). <b>Notes</b> (optional): what the frame cannot show. The words that go with the frame are written for you from the scene.</li>
+          <li><b>Variants</b> 1–4, then <b>Generate</b>. Frames stay with the scene; ★ chooses a frame for its shot, and the storyboard PDF option <b>AI frames</b> prints it instead of the 3D render. With <b>make the missing ones</b> (model and style chosen right there) every shot without a ★ frame gets one made during the export, from its shot camera.</li>
+        </ul>
+        <p><b>Settings</b>: the ComfyUI address (your own GPU — free and unlimited — or a rented one such as RunPod). Start ComfyUI with <code>--enable-cors-header</code>. The app reads which nodes and model files the server has, picks the files by name and says exactly what is missing. You can replace a model's workflow with your own (ComfyUI → Workflow → Export (API)) using the tokens <code>{{prompt}}</code>, <code>{{negative}}</code>, <code>{{color}}</code>, <code>{{depth}}</code>, <code>{{regions}}</code>, <code>{{edges}}</code>, <code>{{face1}}</code>, <code>{{face2}}</code>, <code>{{seed}}</code>, <code>{{width}}</code>, <code>{{height}}</code>, <code>{{hold}}</code>. Without ComfyUI the rest of the app works as before.</p>
+        <h3 id="screenplay">Screenplay → Film</h3>
+        <figure><img src="img/screenplay.jpg" alt="Screenplay to film: the script and the film plan" /></figure>
+        <p>Build a whole film from a script. Open it from the film menu (<b>Screenplay → Film…</b>) or the Director (<b>Whole screenplay → film</b>), and paste the screenplay — any language, any format; the result is in English.</p>
+        <p>Or press <b>Open script file</b> (or drop the file on the text box): <b>PDF</b>, Final Draft (<b>.fdx</b>), <b>Fountain</b>, Word (<b>.docx</b>) or plain text. Persian and Arabic PDFs are read right to left. A scanned PDF with no text layer is added as page images (up to 20) for Claude to read — with your API key; on a Claude chat, attach the pages yourself. Check the text before planning.</p>
+        <ol class="steps">
+          <li><b>Plan with Claude</b> (API key or claude.ai), or <b>Copy for Claude chat</b> → paste into your Claude chat → paste the answer → <b>Read plan</b>. You can add <b>storyboard images</b>: they are sent with your API key; in a Claude chat, attach them yourself.</li>
+          <li>Check the plan: every scene with its heading, sequence, location, cast and shots. Places used by several scenes are marked <i>shared set</i>.</li>
+          <li>Choose <b>New film</b> or <b>Add to this film</b> and click <b>Build film</b>. Each scene is built in turn: its set, cast, lighting and time of day, <b>timed blocking</b> (people wait, then walk / jog / run to their marks at the given seconds) and shots that start where their moment happens. A place used again reuses the same set (linked: set updates reach every scene).</li>
+        </ol>
+        <div class="tip"><b>Tip.</b> Each scene keeps its own undo: <kbd>Ctrl</kbd>+<kbd>Z</kbd> in a scene undoes its build. Refine any scene afterwards with the Director, or by hand.</div>
+
+        <h2 id="phone">Phone camera</h2>
+        <div class="row2">
+          <figure><img src="img/phone-dialog.jpg" alt="Phone dialog with QR code" /></figure>
+          <figure class="phone"><img src="img/phone-page.jpg" alt="Phone controller page" /></figure>
+        </div>
+        <p>Hold your phone like a camera: turn it, and the shot camera turns with it. Works with the <b>desktop app</b>, phone and computer on the <b>same Wi-Fi</b> — no internet, no account, no app to install on the phone.</p>
+        <ol class="steps">
+          <li>Click <b>Phone</b> in the toolbar. A QR code appears (if your computer has several networks, pick the one your phone uses).</li>
+          <li>Scan it with the phone camera and open the link.</li>
+          <li>The first time, the browser warns about the certificate — tap <b>Advanced → Proceed</b>. It is your computer’s own private certificate; the connection is encrypted.</li>
+          <li>Tap <b>Start camera control</b> (on iPhone, allow <i>Motion &amp; Orientation</i>). Turn the phone: the camera follows, relative to its current framing.</li>
+        </ol>
+        <table>
+          <tr><th>On the phone</th><th>What it does</th></tr>
+          <tr><td><b>REC / STOP</b></td><td>Plays the shot from the start and records your move; when the shot ends (or on STOP) the take becomes camera keyframes (<kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes it).</td></tr>
+          <tr><td><b>Recenter</b></td><td>Back to the starting direction with a level horizon.</td></tr>
+          <tr><td><b>Hold</b></td><td>Lets go of the camera so you can reposition yourself; tap again to pick it up without a jump.</td></tr>
+          <tr><td><b>Lens buttons</b></td><td>14 · 18 · 24 · 35 · 50 · 85 · 135 mm.</td></tr>
+          <tr><td><b>Move pad · Up slider</b></td><td>Dolly / truck the camera on the floor; pedestal up / down.</td></tr>
+        </table>
+        <div class="tip"><b>Tip.</b> On Windows, allow Previs Studio through the firewall on <i>private</i> networks when asked. The phone page keeps the screen awake while it is open.</div>
+
+        <h2 id="animatic">Exporting an animatic</h2>
+        <figure><img src="img/animatic.jpg" alt="Export animatic dialog" /></figure>
+        <p>Project menu → <b>Export animatic (video)…</b> or <kbd>Ctrl</kbd>+<kbd>E</kbd>. Choose 720p, 1080p or 4K, 24/25/30 fps, which shots, and <b>burn-ins</b> (shot, camera and lens, shot timecode, running timecode, project name). Every shot is rendered through its own camera, one after another, letterboxed to its aspect ratio. The result is an <b>MP4 (H.264)</b> file — or WebM where H.264 is unavailable. Rendering is frame-exact, so even a slow computer produces a perfectly timed video.</p>
+
+        <h2 id="storyboard">Storyboard (PDF)</h2>
+        <figure><img src="img/storyboard.jpg" alt="A storyboard page" /></figure>
+        <p>Project menu → <b>Export storyboard (PDF)…</b> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>), or the storyboard button in the film timeline for the whole film. Every shot becomes a panel rendered through its own camera, numbered <i>scene.shot</i>, with its length, shot size, angle, lens, camera move, who is in frame and what they do, and your shot notes (Persian and other scripts print correctly). Shots where the camera or an actor moves get their last frame as a small inset.</p>
+        <ul>
+          <li><b>What</b>: this scene, the whole film or one sequence. Each scene starts on a new page.</li>
+          <li><b>Panels per page</b>: 1, 2, 3 (a shot list: image and text side by side), 4 or 6 · A4 or Letter · landscape or portrait.</li>
+          <li><b>Show</b>: camera &amp; action, notes, end frame.</li>
+        </ul>
+
+        <h2 id="productad">Product Ad studio</h2>
+        <p>Switch the toolbar from <b>Film</b> to <b>Product Ad</b> for product commercials. This version ships the <b>luxury perfume bottle</b> as a fully customizable product; any imported model can also be used as a product (<b>Products → Use selected object as product</b>).</p>
+        <ol class="steps">
+          <li><b>Products → New product ad</b>: a new project with a studio stage, the bottle, a hero camera and luxury lighting.</li>
+          <li><b>Templates</b>: pick a length (6, 10, 15 or 30 s) and a frame, then <b>Build</b>. You get real, editable shots — each with its camera move, product animation and text. One undo step.</li>
+          <li><b>Product</b> tab: shape, size, cap, liquid level, label; a material per part (glass, gold, chrome…); upload label artwork and a cap logo; save it to <b>My Library</b>.</li>
+          <li><b>Animate</b>: 30 product animations for this product (the thumbnails show the actual motion). Click to apply and preview. Adjust start, duration, speed, intensity, easing, direction, loop, and blend a continuous float on top. Presets that do not fit (e.g. two-product moves with one product) are flagged before they are applied.</li>
+          <li><b>Camera</b>: 30 moves framed from the product's size (they never pass through it). They become normal camera keys you can edit on the timeline.</li>
+          <li><b>Light</b> / <b>Lighting</b>: 16 studio looks of real lights; backdrop, floor (matte, gloss, mirror), reflections, your own HDRI.</li>
+          <li><b>Brand</b>: brand name, colours, font, logo; add headline, price, call to action… with entrance / exit animations. They show over the camera frame (<kbd>C</kbd>) with safe areas and are burned into exports.</li>
+          <li><b>Effects</b>: light sweep, particles, glow, background colour change, shadow reveal, vignette, condensation.</li>
+          <li><b>Export</b>: commercial video, storyboard PDF, AI prompts &amp; frames, shot list CSV, ad JSON, products GLB, frames up to 4K, transparent PNG, PNG sequence.</li>
+        </ol>
+        <div class="note"><b>Not yet:</b> the other product categories, rendered depth of field, motion trails, a shared online library (share presets as pack files from <b>My Library</b>).</div>
+
+        <h2 id="aiexport">AI prompt &amp; frames</h2>
+        <figure><img src="img/aiexport.jpg" alt="AI prompt and frames dialog" /></figure>
+        <p>Turn a previs shot into the inputs an AI video generator needs: a clean <b>first frame</b> and <b>last frame</b> through the shot camera, and a <b>prompt in English</b> written from what is really in your scene. Click <b>AI Prompt</b> in the toolbar (<kbd>Shift</kbd>+<kbd>A</kbd>).</p>
+        <ul>
+          <li><b>What it reads from the shot</b>: shot size (from how much of the main person the frame shows), camera angle and height, focal length, the camera move (dolly, truck, pan, tilt, crane, arc, zoom, handheld) and its speed, who is in frame, where, which way they face, what they do and where they walk, over-the-shoulder framing, rack focus, the lights and time of day, and your shot notes. Nothing is invented.</li>
+          <li><b>Presets</b>: Text to video, Image to video, Seedance, Kling, Veo and Runway. They change the order and emphasis (Runway: short, motion only, no negative prompt). Image-to-video presets describe only what moves — attach the exported first frame.</li>
+          <li><b>Style</b>: your own words (“cinematic, 35mm film, moody”), kept separate from the scene facts.</li>
+          <li>Edit the prompt freely (<i>regenerate</i> brings back the generated one), or <b>Edit template</b> to rewrite a preset with placeholders such as <code>{{shot}}</code>, <code>{{camera}}</code>, <code>{{subjects}}</code>, <code>{{lighting}}</code>.</li>
+          <li><b>Copy prompt</b>, or save it as <b>TXT</b> or structured <b>JSON</b>. <b>Save</b> under each frame renders it at 1280–3840 px, PNG or JPEG, optionally with thirds guides.</li>
+          <li><b>Export … shots (ZIP)</b>: one folder per shot (first and last frame, <code>prompt.txt</code>, <code>shot.json</code>), plus <code>all-prompts.txt</code>, <code>shots.json</code> and a contact sheet.</li>
+        </ul>
+        <div class="tip"><b>Tip.</b> Generators work best with clips of 5–10 seconds. For longer shots, split them, or use the first and last frames as start/end images where the generator supports it.</div>
+
+        <h2 id="projects">Projects &amp; files</h2>
+        <ul>
+          <li>Work is <b>saved automatically</b> (the indicator next to the project name; <kbd>Ctrl</kbd>+<kbd>S</kbd> saves at once). The <b>P</b> / house button at the left of the toolbar (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>) goes to <b>Home</b> with all your films; <kbd>Esc</kbd> returns. <kbd>Ctrl</kbd>+<kbd>O</kbd> opens the scene list; the project menu has New, Rename, Save a copy.</li>
+          <li><b>Save to file…</b> writes a <code>.previs.json</code> file (in the desktop app with the normal Save dialog). <b>Open file…</b> loads one. Drag a project file onto the window to open it.</li>
+          <li>Undo / redo everything with <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>.</li>
+        </ul>
+
+        <h2 id="shortcuts">Keyboard shortcuts</h2>
+        <p>On macOS use <kbd>⌘</kbd> where <kbd>Ctrl</kbd> is written.</p>
+        <table>
+          <tr><th>Keys</th><th>Action</th></tr>
+          <tr><td><kbd>Q</kbd> <kbd>W</kbd> <kbd>E</kbd> <kbd>R</kbd></td><td>Select · move · rotate · scale</td></tr>
+          <tr><td><kbd>X</kbd> · <kbd>S</kbd> · <kbd>G</kbd></td><td>World/local axes · snapping · grid</td></tr>
+          <tr><td><kbd>U</kbd></td><td>Flat light: every scene light, the sun / moon and shadows off, an even neutral light — see the shot without its lighting (view only; press again to restore)</td></tr>
+          <tr><td><kbd>F</kbd> · <kbd>End</kbd></td><td>Frame selection · drop onto the surface below</td></tr>
+          <tr><td><kbd>H</kbd> · <kbd>Alt</kbd>+<kbd>H</kbd></td><td>Hide selection · show all</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd> · <kbd>Delete</kbd></td><td>Duplicate · delete</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> · <kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>Group · ungroup · select all</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Undo · redo</td></tr>
+          <tr><td><kbd>C</kbd> · <kbd>Shift</kbd>+<kbd>C</kbd> · <kbd>P</kbd></td><td>Camera view · new camera from view · pilot mode</td></tr>
+          <tr><td><kbd>[</kbd> <kbd>]</kbd></td><td>Previous / next camera</td></tr>
+          <tr><td><kbd>N</kbd> · <kbd>1</kbd>–<kbd>9</kbd> · <kbd>0</kbd></td><td>New shot · go to shot · base scene</td></tr>
+          <tr><td><kbd>Space</kbd> · <kbd>Home</kbd></td><td>Play / pause · go to start</td></tr>
+          <tr><td><kbd>K</kbd> · <kbd>Shift</kbd>+<kbd>K</kbd></td><td>Add key (selected objects, else the camera) · Auto Key</td></tr>
+          <tr><td><kbd>←</kbd> <kbd>→</kbd> · <kbd>Shift</kbd>+<kbd>←</kbd> <kbd>→</kbd></td><td>Previous / next frame · previous / next key</td></tr>
+          <tr><td><kbd>D</kbd> · <kbd>Shift</kbd>+<kbd>D</kbd></td><td>Director · Draw Path</td></tr>
+          <tr><td><kbd>Shift</kbd>+<kbd>F</kbd></td><td>Film timeline</td></tr>
+          <tr><td><kbd>Shift</kbd>+<kbd>A</kbd></td><td>AI prompt &amp; frames</td></tr>
+          <tr><td><kbd>L</kbd> · <kbd>Shift</kbd>+<kbd>L</kbd></td><td>Lighting tab · add a spot light</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd> · <kbd>Ctrl</kbd>+<kbd>O</kbd> · <kbd>Ctrl</kbd>+<kbd>E</kbd></td><td>Save · projects · export animatic</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td><td>Storyboard (PDF)</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd></td><td>Home (all films)</td></tr>
+          <tr><td><kbd>Enter</kbd> · <kbd>Esc</kbd></td><td>Apply / cancel a drawn path · clear selection</td></tr>
+        </table>
+
+        <h2 id="trouble">Troubleshooting</h2>
+        <table>
+          <tr><th>Problem</th><th>Try this</th></tr>
+          <tr><td>The phone page does not open</td><td>Phone and computer must be on the same Wi-Fi (not a guest network). Choose the right address under the QR code. On Windows allow the app on private networks in the firewall.</td></tr>
+          <tr><td>The phone connects but the camera does not move</td><td>Tap <b>Start camera control</b>. On iPhone: Settings → Safari → <i>Motion &amp; Orientation Access</i>. Make sure a shot is active in the app.</td></tr>
+          <tr><td>“Connect Claude” says the key is not accepted</td><td>Copy the whole key (it starts with <code>sk-ant-</code>) and check that your Anthropic account has credit.</td></tr>
+          <tr><td>The view is slow</td><td>Hide what you do not need (<kbd>H</kbd>), close other GPU-heavy apps, use the desktop app on a computer with a dedicated GPU.</td></tr>
+          <tr><td>macOS says the app is damaged</td><td>See <a href="#install">Install</a> — the app is not notarised yet; use <i>Open Anyway</i>.</td></tr>
+        </table>
+
+        <h2 id="about">About</h2>
+        <footer class="credits">
+          <div style="color: var(--faint); font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em">Created by</div>
+          <div class="who">Saeed Salarvand</div>
+          <div class="links">
+            <a href="https://instagram.com/Saeed__salarvand" target="_blank" rel="noopener noreferrer">Instagram · Saeed__salarvand</a>
+            <a href="https://t.me/Saeed_VfX" target="_blank" rel="noopener noreferrer">Telegram · Saeed_VfX</a>
+            <a href="https://www.linkedin.com/in/saeed-salarvand/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p style="color: var(--faint); font-size: 13px; margin: 12px 0 0">© 2026 Saeed Salarvand. All rights reserved.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
