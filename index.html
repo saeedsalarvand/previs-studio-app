@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Previs Studio — 3D previs &amp; virtual directing for filmmakers</title>
+    <meta name="description" content="Block scenes, place actors and props, shoot coverage with real lenses, animate characters and cameras, light the set, steer the camera with your phone and export an animatic. Free for Windows, macOS and the web." />
+    <meta property="og:title" content="Previs Studio" />
+    <meta property="og:description" content="3D previs and virtual directing for filmmakers — by Saeed Salarvand." />
+    <meta property="og:image" content="https://saeedsalarvand.github.io/previs-studio-app/app/manual/img/overview.jpg" />
+    <link rel="icon" type="image/png" href="assets/icon-256.png" />
+    <style>
+      :root { --bg: #0f1013; --panel: #17191d; --raised: #202328; --border: #2b2e35; --text: #ecedef; --muted: #a2a8b1; --faint: #6f757e; --accent: #e3a646; --accent2: #f3c066; color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+      nav.top { position: sticky; top: 0; z-index: 10; background: rgba(15, 16, 19, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+      nav.top .wrap { display: flex; align-items: center; gap: 18px; height: 60px; }
+      nav.top img { width: 30px; height: 30px; }
+      nav.top b { font-size: 16px; }
+      nav.top .links { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+      nav.top .links a { color: var(--muted); }
+      nav.top .links a:hover { color: var(--text); text-decoration: none; }
+      .hero { padding: 72px 0 40px; text-align: center; background: radial-gradient(1200px 500px at 50% -10%, #e3a64626, transparent 70%); }
+      .hero img.icon { width: 96px; height: 96px; filter: drop-shadow(0 12px 40px #e3a64640); }
+      .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 18px 0 14px; letter-spacing: -0.02em; }
+      .hero h1 span { background: linear-gradient(90deg, var(--accent2), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .hero p { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 760px; margin: 0 auto; }
+      .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 30px 0 12px; }
+      .btn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px; border-radius: 12px; font-weight: 650; font-size: 16px; border: 1px solid var(--border); background: var(--raised); color: var(--text); }
+      .btn:hover { text-decoration: none; border-color: #4a4e57; }
+      .btn.primary { background: linear-gradient(180deg, var(--accent2), var(--accent)); color: #111; border: 0; box-shadow: 0 10px 30px #e3a64633; }
+      .btn small { display: block; font-weight: 500; font-size: 12px; opacity: 0.75; }
+      .btn svg { width: 22px; height: 22px; }
+      .ver { color: var(--faint); font-size: 13px; }
+      .shot { margin: 34px auto 0; max-width: 1100px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 30px 90px #000a; }
+      .shot img { display: block; width: 100%; }
+      section { padding: 72px 0 24px; }
+      h2 { font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -0.01em; margin: 0 0 10px; }
+      .sub { color: var(--muted); max-width: 720px; margin: 0 0 30px; font-size: 18px; }
+      .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .f { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+      .f h3 { margin: 6px 0 6px; font-size: 18px; }
+      .f p { margin: 0; color: var(--muted); font-size: 15px; }
+      .f .i { width: 36px; height: 36px; border-radius: 10px; background: #e3a6461f; color: var(--accent); display: grid; place-items: center; font-size: 19px; }
+      .split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 36px; align-items: center; margin: 36px 0; }
+      .split.rev { grid-template-columns: 1fr 1.15fr; }
+      .split.rev .media { order: 2; }
+      .media img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; }
+      .split h3 { font-size: 24px; margin: 0 0 8px; }
+      .split p, .split li { color: var(--muted); }
+      .phone-pair { display: grid; grid-template-columns: 1fr 180px; gap: 14px; align-items: end; }
+      .phone-pair img:last-child { border-radius: 22px; }
+      .dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .dl .f { display: flex; flex-direction: column; gap: 8px; }
+      .dl .f .btn { margin-top: auto; justify-content: center; }
+      table { width: 100%; border-collapse: collapse; font-size: 15px; }
+      td, th { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+      th { color: var(--muted); font-weight: 600; }
+      .langs { display: flex; flex-wrap: wrap; gap: 12px; }
+      .langs a { flex: 1; min-width: 200px; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); color: var(--text); font-size: 20px; font-weight: 650; text-align: center; }
+      .langs a:hover { border-color: var(--accent); text-decoration: none; }
+      .langs small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; }
+      .creator { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; background: linear-gradient(135deg, #1b1d22, #14151a); border: 1px solid var(--border); border-radius: 18px; padding: 28px; }
+      .creator .who { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
+      .creator .label { color: var(--faint); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; }
+      .creator .social { margin-left: auto; display: flex; flex-wrap: wrap; gap: 10px; }
+      .creator .social a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--raised); color: var(--text); font-weight: 600; }
+      .creator .social svg { width: 18px; height: 18px; color: var(--accent); }
+      .intl { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      [dir='rtl'], [dir='rtl'] * { letter-spacing: 0 !important; }
+      .intl .f[dir='rtl'] { font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif; line-height: 1.9; }
+      footer { padding: 40px 0 60px; color: var(--faint); font-size: 14px; text-align: center; }
+      @media (max-width: 900px) {
+        .features, .dl, .intl { grid-template-columns: 1fr; }
+        .split, .split.rev { grid-template-columns: 1fr; }
+        .split.rev .media { order: 0; }
+        nav.top .links { display: none; }
+        .creator .social { margin-left: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="top">
+      <div class="wrap">
+        <img src="assets/icon-256.png" alt="" />
+        <b>Previs Studio</b>
+        <div class="links">
+          <a href="#features">Features</a>
+          <a href="#download">Download</a>
+          <a href="app/manual/">Manual</a>
+          <a href="#creator">Creator</a>
+          <a href="https://github.com/saeedsalarvand/previs-studio-app/releases">Releases</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <img class="icon" src="assets/icon.svg" alt="Previs Studio icon" />
+        <h1>Direct your film<br /><span>before you shoot it.</span></h1>
+        <p>Previs Studio is a 3D previs and virtual-directing tool for filmmakers. Build the set, block the actors, shoot your coverage with real lenses, animate characters, cars and cameras, light the scene, steer the camera with your phone — and export the animatic.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-Setup.exe">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3V5.5Zm8.4-1.2L21 3v8.5h-9.6V4.3ZM3 12.4h7.5v7.2L3 18.5v-6.1Zm8.4 0H21V21l-9.6-1.4v-7.2Z" /></svg>
+            <span>Download for Windows<small>Windows 10 / 11 · 64-bit</small></span>
+          </a>
+          <a class="btn primary" href="https://github.com/saeedsalarvand/previs-studio-app/releases">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.2 1-4 2.5-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-4ZM14 5.6c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3Z" /></svg>
+            <span>Download for macOS<small>Apple Silicon &amp; Intel</small></span>
+          </a>
+          <a class="btn" href="app/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.8 2.5 15.2 0 18M12 3c-2.5 2.8-2.5 15.2 0 18" /></svg>
+            <span>Open in the browser<small>No install</small></span>
+          </a>
+        </div>
+        <div class="ver">Version 1.8.1 · free · works offline on desktop · <a href="app/manual/">User manual (EN · FA · ES)</a></div>
+        <div class="shot"><img src="app/manual/img/overview.jpg" alt="Previs Studio main window" /></div>
+      </div>
+    </header>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>Everything previs needs, in one window</h2>
+        <p class="sub">Made for directors, DPs, storyboard artists and students: think in shots and lenses, not in 3D software.</p>
+        <div class="features">
+          <div class="f"><div class="i">📜</div><h3>Screenplay → Film</h3><p>Paste a script in any language: every scene is built with its set, cast and timed blocking, lighting and shots — shared sets where a place returns.</p></div>
+          <div class="f"><div class="i">🎬</div><h3>Shots &amp; real lenses</h3><p>Cameras with focal length, sensor, aspect ratio, focus and frame guides. Build your coverage as a shot list with per-shot cheats.</p></div>
+          <div class="f"><div class="i">🧱</div><h3>400 ready models</h3><p>Characters, animals, furniture, lamps and chandeliers, buildings and towers, vehicles, military, street kits, nature, props and film gear.</p></div>
+          <div class="f"><div class="i">✨</div><h3>AI Director</h3><p>Describe a scene in any language — set, blocking, shots, camera moves and lighting are built for you. Works offline from a brief, or with Claude — even through your normal Claude chat, no API key.</p></div>
+          <div class="f"><div class="i">🎥</div><h3>Cinematic camera motion</h3><p>Dolly, crane, orbit, arc, follow, handheld, drone and more; timing, smoothing, tracking, rigs and shake as layers.</p></div>
+          <div class="f"><div class="i">✏️</div><h3>Draw the move</h3><p>Sketch the camera route from above — or the route of an actor or a car — and it becomes the animation.</p></div>
+          <div class="f"><div class="i">🚶</div><h3>Actors walk, cars drive</h3><p>Keyframe characters and vehicles: walk / jog / run picked by speed, feet that do not slide, wheels that roll and steer.</p></div>
+          <div class="f"><div class="i">💡</div><h3>Lighting</h3><p>Three-point, Rembrandt, low-key, golden hour, moonlight… in one click. Kelvin, stops, practical lamps, time of day, exposure.</p></div>
+          <div class="f"><div class="i">📱</div><h3>Phone as a camera</h3><p>Scan a QR code and turn your phone — the shot camera follows. Record handheld takes over your own Wi-Fi, no internet.</p></div>
+          <div class="f"><div class="i">🎬</div><h3>Film, scenes &amp; sets</h3><p>Sequences of scenes, each with its own set, light and cast. Reuse a set in many scenes, then play or export the whole film from one timeline.</p></div>
+          <div class="f"><div class="i">📦</div><h3>Your own models</h3><p>Import .glb, .gltf, .fbx and .obj: sizes converted to metres, own materials or clay, saved with your projects.</p></div>
+          <div class="f"><div class="i">🔊</div><h3>Sound</h3><p>Dialogue, music and effects tracks on the scene’s time: in sync across cuts, in playback and in the exported animatic.</p></div>
+          <div class="f"><div class="i">🖼️</div><h3>Reference images</h3><p>Lay a storyboard panel or a reference frame over the shot camera to match it; place photos as panels in the set.</p></div>
+          <div class="f"><div class="i">📋</div><h3>Storyboard PDF</h3><p>Every shot as a panel through its camera, with size, angle, lens, move, action and notes — for a scene or the whole film.</p></div>
+          <div class="f"><div class="i">🪄</div><h3>AI prompt &amp; frames</h3><p>First and last frame of every shot plus an English prompt written from your real scene — for Seedance, Kling, Veo, Runway and more.</p></div>
+          <div class="f"><div class="i">🎞️</div><h3>Animatic export</h3><p>Every shot through its camera into one MP4, with shot names, lens and timecode burned in. 720p to 4K.</p></div>
+        </div>
+
+        <div class="split">
+          <div class="media"><img src="app/manual/img/director.jpg" alt="Director" /></div>
+          <div>
+            <h3>“An interrogation room, two people across a table…”</h3>
+            <p>Write what you see. The Director plans the room with doors and windows, places furniture and actors, frames each shot by size, angle and lens, moves the cameras and lights the set — as one undo step you can refine in plain words.</p>
+          </div>
+        </div>
+        <div class="split rev">
+          <div class="media"><img src="app/manual/img/draw-path.jpg" alt="Draw Path" /></div>
+          <div>
+            <h3>Draw the camera path</h3>
+            <p>From the top view, draw any line: curves, S-bends, loops. Choose the height, look along the path or keep a subject in frame, set the duration and ease — it becomes smooth camera keys.</p>
+          </div>
+        </div>
+        <div class="split">
+          <div class="media"><img src="app/manual/img/object-animation.jpg" alt="Character walking" /></div>
+          <div>
+            <h3>Actors that walk, cars that drive</h3>
+            <p>Give a character two keys — or draw its route — and it walks there, turns to face where it goes and stands idle when it arrives. Faster becomes a jog or a run. Vehicles roll their wheels and steer into turns.</p>
+          </div>
+        </div>
+        <div class="split rev">
+          <div class="media phone-pair"><img src="app/manual/img/phone-dialog.jpg" alt="Phone pairing" /><img src="app/manual/img/phone-page.jpg" alt="Phone controller" /></div>
+          <div>
+            <h3>Your phone is the camera</h3>
+            <p>Scan the QR code, hold the phone like a camera and move. Record a handheld take while the scene plays; it becomes keyframes you can polish. Lens buttons, a move pad and a lift slider are on the phone. Everything stays on your local network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="wrap">
+        <h2>Download</h2>
+        <p class="sub">Free. The desktop app works fully offline; only the AI Director needs internet (with your own Claude API key).</p>
+        <div class="dl">
+          <div class="f">
+            <h3>Windows</h3>
+            <p>Windows 10 or 11, 64-bit. If SmartScreen appears, choose <b>More info → Run anyway</b>.</p>
+            <a class="btn primary" href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-Setup.exe">Previs-Studio-Setup.exe</a>
+          </div>
+          <div class="f">
+            <h3>macOS</h3>
+            <p>macOS 12 or later, Apple Silicon and Intel. First launch: <b>right-click → Open</b>, or <i>System Settings → Privacy &amp; Security → Open Anyway</i>.</p>
+            <a class="btn primary" href="https://github.com/saeedsalarvand/previs-studio-app/releases">Previs-Studio-mac.dmg</a>
+          </div>
+          <div class="f">
+            <h3>Web</h3>
+            <p>Chrome, Edge or Safari on a computer with a modern graphics card. Projects are saved in your browser.</p>
+            <a class="btn" href="app/">Open Previs Studio</a>
+          </div>
+        </div>
+        <p class="ver" style="margin-top: 16px">All versions: <a href="https://github.com/saeedsalarvand/previs-studio-app/releases">github.com/saeedsalarvand/previs-studio-app/releases</a></p>
+      </div>
+    </section>
+
+    <section id="manual">
+      <div class="wrap">
+        <h2>User manual</h2>
+        <p class="sub">A complete, illustrated guide — installation, every tool, shortcuts and troubleshooting. Also built into the app (the <b>?</b> button), offline.</p>
+        <div class="langs">
+          <a href="app/manual/en.html">English<small>Full guide</small></a>
+          <a href="app/manual/fa.html" dir="rtl" lang="fa">فارسی<small>راهنمای کامل</small></a>
+          <a href="app/manual/es.html" lang="es">Español<small>Guía completa</small></a>
+        </div>
+        <div class="intl" style="margin-top: 16px">
+          <div class="f" dir="rtl" lang="fa">
+            <h3>پریویس استودیو</h3>
+            <p>ابزار پیش‌تجسم سه‌بعدی و کارگردانی مجازی برای فیلمسازان: ساخت صحنه، چیدمان بازیگران، نماها با لنزهای واقعی، حرکت دوربین، انیمیشن کاراکتر و ماشین، نورپردازی، کنترل دوربین با گوشی و خروجی انیماتیک. نسخهٔ دسکتاپ کاملاً آفلاین کار می‌کند.</p>
+          </div>
+          <div class="f" lang="es">
+            <h3>Previs Studio</h3>
+            <p>Previsualización 3D y dirección virtual para cineastas: decorado, puesta en escena, planos con lentes reales, movimientos de cámara, animación de personajes y vehículos, iluminación, cámara con el teléfono y exportación de la animática. La versión de escritorio funciona sin conexión.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="creator">
+      <div class="wrap">
+        <div class="creator">
+          <div>
+            <div class="label">Created by</div>
+            <div class="who">Saeed Salarvand</div>
+          </div>
+          <div class="social">
+            <a href="https://instagram.com/Saeed__salarvand" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" /></svg>Saeed__salarvand</a>
+            <a href="https://t.me/Saeed_VfX" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.6 2.9 10.8c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8l3.2-15.2c.3-1.3-.5-1.9-1.4-1.5ZM8.3 13.4l10.3-6.5c.5-.3.9-.1.5.2l-8.8 8-.3 3.7-1.7-5.4Z" /></svg>Saeed_VfX</a>
+            <a href="https://www.linkedin.com/in/saeed-salarvand/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.45h-4v-5.72c0-1.36-.02-3.12-1.9-3.12-1.9 0-2.2 1.48-2.2 3.02v5.82h-4v-11Z" /></svg>LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Questions</h2>
+        <table>
+          <tr><th>Is it free?</th><td>Yes. The AI Director uses your own Anthropic (Claude) API key, billed to your account — everything else is free and needs no account.</td></tr>
+          <tr><th>Does it need internet?</th><td>No. The desktop app runs fully offline. Phone control uses your local Wi-Fi only. Only Claude needs internet.</td></tr>
+          <tr><th>Why does Windows / macOS warn me?</th><td>The installers are not code-signed yet. The warnings are normal for unsigned apps — see the steps above or the manual.</td></tr>
+          <tr><th>Where are my projects?</th><td>Saved automatically inside the app; use <i>Save to file</i> for a <code>.previs.json</code> you can share or back up.</td></tr>
+          <tr><th>Is the source code available?</th><td>No — Previs Studio is free to use; the source code is private.</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">© 2026 Saeed Salarvand · Previs Studio 1.8.1 · <a href="app/manual/">Manual</a> · <a href="https://github.com/saeedsalarvand/previs-studio-app/releases">Releases</a></div>
+    </footer>
+  </body>
+</html>
