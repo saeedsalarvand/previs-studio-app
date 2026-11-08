@@ -9,7 +9,7 @@
   <a href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-Setup.exe"><b>⬇ Download for Windows</b></a>
 </p>
 
-<p align="center">Version 1.7.2 · Windows 10 / 11 · free · works fully offline</p>
+<p align="center">Version 1.8.0 · Windows 10 / 11 · free · works fully offline</p>
 
 ---
 
