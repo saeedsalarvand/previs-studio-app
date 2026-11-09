@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="media/overview.jpg" alt="Previs Studio" width="100%" />
+  <img src="media/overview.jpg" alt="ShotTitan" width="100%" />
 </p>
 
-<h1 align="center">Previs Studio</h1>
+<h1 align="center">ShotTitan</h1>
 <p align="center"><b>3D previs &amp; virtual directing for filmmakers</b><br/>Build the set · block the actors · shoot coverage with real lenses · animate · light · steer the camera with your phone · export the animatic</p>
 
 <p align="center">
-  <a href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-Setup.exe"><b>⬇ Download for Windows</b></a>
+  <a href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/ShotTitan-Setup.exe"><b>⬇ Download for Windows</b></a>
 </p>
 
-<p align="center">Version 1.8.2 · Windows 10 / 11 · free · works fully offline</p>
+<p align="center">Version 1.8.3 · Windows 10 / 11 · free · works fully offline</p>
 
 ---
 
@@ -45,7 +45,7 @@
 
 ## Install
 
-**Windows 10 / 11 (64-bit)** — download [`Previs-Studio-Setup.exe`](https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/Previs-Studio-Setup.exe) and run it. If SmartScreen says “Windows protected your PC”, click **More info → Run anyway** (the installer is not code-signed yet).
+**Windows 10 / 11 (64-bit)** — download [`ShotTitan-Setup.exe`](https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/ShotTitan-Setup.exe) and run it. If SmartScreen says “Windows protected your PC”, click **More info → Run anyway** (the installer is not code-signed yet).
 
 
 Updates install themselves: the app checks for a new version when it starts (**Help → Check for Updates…**).
