@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Previs Studio · Manual de usuario</title>
-    <meta name="description" content="Manual de usuario completo de Previs Studio: previsualización 3D y dirección virtual para cineastas." />
+    <title>ShotTitan · Manual de usuario</title>
+    <meta name="description" content="Manual de usuario completo de ShotTitan: previsualización 3D y dirección virtual para cineastas." />
     <link rel="stylesheet" href="manual.css" />
   </head>
   <body dir="ltr">
     <header class="top">
-      <div class="logo">P</div>
-      <span class="name">Previs Studio · Manual de usuario</span>
+      <div class="logo">S</div>
+      <span class="name">ShotTitan · Manual de usuario</span>
       <nav class="langs" aria-label="Idioma">
         <a href="en.html" lang="en">English</a>
         <a href="fa.html">Persian</a>
@@ -54,10 +54,10 @@
         </ol>
       </nav>
       <main>
-        <h1 id="welcome">Previs Studio</h1>
+        <h1 id="welcome">ShotTitan</h1>
         <p class="lead">Previsualización 3D y dirección virtual para cineastas: haz el blocking de una escena, coloca actores y utilería, configura cámaras y lentes, rueda tu cobertura, anima, ilumina… y exporta una animática.</p>
-        <figure><img src="img/overview.jpg" alt="Ventana principal de Previs Studio" /><figcaption>La ventana principal: biblioteca de recursos (izquierda), vista 3D (centro), escena e inspector (derecha), planos y línea de tiempo (abajo).</figcaption></figure>
-        <p>Previs Studio funciona de tres maneras, todas con las mismas funciones:</p>
+        <figure><img src="img/overview.jpg" alt="Ventana principal de ShotTitan" /><figcaption>La ventana principal: biblioteca de recursos (izquierda), vista 3D (centro), escena e inspector (derecha), planos y línea de tiempo (abajo).</figcaption></figure>
+        <p>ShotTitan funciona de tres maneras, todas con las mismas funciones:</p>
         <ul>
           <li><b>Aplicación de escritorio</b> para Windows y macOS: funciona totalmente sin conexión. El control de cámara con el teléfono está disponible aquí.</li>
           <li><b>Versión web</b>: abre el sitio web y trabaja en el navegador, sin instalar nada.</li>
@@ -67,15 +67,15 @@
         <h2 id="install">Instalación y primer inicio</h2>
         <h3>Windows</h3>
         <ol class="steps">
-          <li>Descarga <code>Previs-Studio-Setup.exe</code> desde la página de descargas.</li>
+          <li>Descarga <code>ShotTitan-Setup.exe</code> desde la página de descargas.</li>
           <li>Ejecútalo. Si Windows SmartScreen muestra “Windows protegió tu PC”, haz clic en <b>More info → Run anyway</b> (Más información → Ejecutar de todas formas); el instalador aún no tiene firma de código.</li>
-          <li>Elige la carpeta de instalación y termina. Inicia Previs Studio desde el menú Inicio o el acceso directo del escritorio.</li>
+          <li>Elige la carpeta de instalación y termina. Inicia ShotTitan desde el menú Inicio o el acceso directo del escritorio.</li>
         </ol>
         <h3>macOS</h3>
         <ol class="steps">
-          <li>Descarga <code>Previs-Studio-mac.dmg</code> (una sola versión para Apple Silicon e Intel).</li>
-          <li>Ábrelo y arrastra <b>Previs Studio</b> a <b>Aplicaciones</b>.</li>
-          <li>La primera vez, haz <b>clic derecho en la app → Abrir → Abrir</b>. Si macOS indica que la app “está dañada” o que no se puede verificar, abre <b>Ajustes del Sistema → Privacidad y seguridad</b> y haz clic en <b>Abrir igualmente</b>, o ejecuta <code>xattr -dr com.apple.quarantine "/Applications/Previs Studio.app"</code> en Terminal.</li>
+          <li>Descarga <code>ShotTitan-mac.dmg</code> (una sola versión para Apple Silicon e Intel).</li>
+          <li>Ábrelo y arrastra <b>ShotTitan</b> a <b>Aplicaciones</b>.</li>
+          <li>La primera vez, haz <b>clic derecho en la app → Abrir → Abrir</b>. Si macOS indica que la app “está dañada” o que no se puede verificar, abre <b>Ajustes del Sistema → Privacidad y seguridad</b> y haz clic en <b>Abrir igualmente</b>, o ejecuta <code>xattr -dr com.apple.quarantine "/Applications/ShotTitan.app"</code> en Terminal.</li>
         </ol>
         <h3>Versión web</h3>
         <p>Abre el enlace de la aplicación web desde la página de descargas en Chrome, Edge o Safari (se recomienda una computadora con una tarjeta gráfica razonablemente moderna). Tus proyectos se guardan en ese navegador.</p>
@@ -241,6 +241,10 @@
           <tr><td><kbd>↑</kbd> <kbd>↓</kbd> · <kbd>←</kbd> <kbd>→</kbd> · <kbd>Inicio</kbd> <kbd>Fin</kbd></td><td>Corte anterior / siguiente · un fotograma · inicio / final</td></tr>
           <tr><td><kbd>A</kbd> · <kbd>T</kbd> · <kbd>B</kbd> · <kbd>N</kbd></td><td>Selección · Trim · Cuchilla · ajuste</td></tr>
           <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd> · <kbd>Ctrl</kbd>+<kbd>C</kbd>/<kbd>V</kbd> · <kbd>Ctrl</kbd>+<kbd>D</kbd></td><td>Cortar en el cabezal · copiar / pegar clips · duplicar</td></tr>
+          <tr><td><kbd>Q</kbd> · <kbd>W</kbd> (<kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>[</kbd> / <kbd>]</kbd>)</td><td>Recorte con arrastre del inicio / final del clip bajo el cabezal hasta el cabezal</td></tr>
+          <tr><td><kbd>E</kbd></td><td>Extender edición: mover el corte más cercano al cabezal</td></tr>
+          <tr><td><kbd>,</kbd> <kbd>.</kbd> (<kbd>Mayús</kbd>: 5 fotogramas) · <kbd>Alt</kbd>+<kbd>,</kbd> <kbd>.</kbd></td><td>Deslizar el contenido del clip un fotograma (slip) · desplazarlo entre sus vecinos (slide)</td></tr>
+          <tr><td><kbd>F</kbd></td><td>Match frame: este momento del plano en la página Camera</td></tr>
           <tr><td><kbd>M</kbd> · <kbd>I</kbd> <kbd>O</kbd> · <kbd>Alt</kbd>+<kbd>X</kbd></td><td>Marcador · Entrada / Salida · borrar Entrada / Salida</td></tr>
           <tr><td><kbd>=</kbd> <kbd>-</kbd> · <kbd>Mayús</kbd>+<kbd>Z</kbd></td><td>Zoom · encajar</td></tr>
           <tr><td><kbd>Supr</kbd> · <kbd>Esc</kbd></td><td>Eliminar (ripple) · quitar la selección</td></tr>
@@ -254,7 +258,7 @@
           <li><b>File</b> — un archivo de sonido (MP3, WAV, M4A, OGG, FLAC) para la línea.</li>
         </ul>
         <p>Cada línea tiene un hablante (o una voz en off), un inicio (segundos de la escena; <b>⇤ Playhead</b> la pone en el cabezal), su texto, una <b>emoción</b> (calma, alegre, emocionado, triste, enfadado, asustado, susurro, grito) y un ritmo. La voz integrada no tiene control de emoción propio: la emoción se da con el ritmo, el nivel y la puntuación. <b>Character voices</b> fija la voz y el ritmo de cada personaje (▶ para oírla); los personajes nuevos reciben voces distintas acordes con la figura.</p>
-        <p>En la línea de tiempo Edit, clic derecho en un clip → <b>Add dialogue here…</b>; las líneas sin sonido aparecen como recuadros discontinuos donde se dicen, y doble clic en el sonido de una línea la abre. Mientras suena una línea, la boca del hablante se abre y se cierra con la voz y la cabeza se mueve con ella (también en los vídeos exportados). Las líneas con voz son sonidos normales: muévelas, recórtalas, haz fundidos; borrar el sonido conserva la línea.</p>
+        <p>En la línea de tiempo Edit, clic derecho en un clip → <b>Add dialogue here…</b>; las líneas sin sonido aparecen como recuadros discontinuos donde se dicen, y doble clic en el sonido de una línea la abre. Mientras suena una línea, la cabeza del hablante se mueve un poco con la voz (también en los vídeos exportados). Las líneas con voz son sonidos normales: muévelas, recórtalas, haz fundidos; borrar el sonido conserva la línea.</p>
         <p>Al importar un guion se pregunta <b>Spoken dialogue?</b> antes de construir: <b>Yes</b> da voz a todas las líneas (un paréntesis como «(whispering)» o «(angry)» se convierte en la emoción); <b>No</b> deja las líneas en cada escena sin sonido, para darles voz después.</p>
 
         <h2 id="motion">Movimiento de cámara</h2>
@@ -417,7 +421,7 @@ EXT. HOSPITAL PARKING LOT - CONTINUOUS</pre>
           <tr><td><b>Botones de lente</b></td><td>14 · 18 · 24 · 35 · 50 · 85 · 135 mm.</td></tr>
           <tr><td><b>Pad de movimiento · Deslizador vertical</b></td><td>Dolly / travelling de la cámara sobre el suelo; pedestal arriba / abajo.</td></tr>
         </table>
-        <div class="tip"><b>Consejo.</b> En Windows, cuando se te pida, permite Previs Studio en el firewall para redes <i>privadas</i>. La página del teléfono mantiene la pantalla encendida mientras está abierta.</div>
+        <div class="tip"><b>Consejo.</b> En Windows, cuando se te pida, permite ShotTitan en el firewall para redes <i>privadas</i>. La página del teléfono mantiene la pantalla encendida mientras está abierta.</div>
 
         <h2 id="animatic">Exportar una animática</h2>
         <figure><img src="img/animatic.jpg" alt="Diálogo de exportación de animática" /></figure>
@@ -465,9 +469,9 @@ EXT. HOSPITAL PARKING LOT - CONTINUOUS</pre>
 
         <h2 id="projects">Proyectos y archivos</h2>
         <ul>
-          <li>El trabajo se <b>guarda automáticamente</b> (el indicador junto al nombre del proyecto; <kbd>Ctrl</kbd>+<kbd>S</kbd> guarda al momento). El botón <b>P</b> / casa a la izquierda de la barra (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>) va a <b>Home</b> con todas tus películas; <kbd>Esc</kbd> vuelve. <kbd>Ctrl</kbd>+<kbd>O</kbd> abre la lista de escenas; el menú de proyecto incluye New, Rename y Save a copy.</li>
+          <li>El trabajo se <b>guarda automáticamente</b> (el indicador junto al nombre del proyecto; <kbd>Ctrl</kbd>+<kbd>S</kbd> guarda al momento). El botón <b>S</b> / casa a la izquierda de la barra (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>) va a <b>Home</b> con todas tus películas; <kbd>Esc</kbd> vuelve. <kbd>Ctrl</kbd>+<kbd>O</kbd> abre la lista de escenas; el menú de proyecto incluye New, Rename y Save a copy.</li>
           <li><b>Save to file…</b> escribe un archivo <code>.previs.json</code> (en la aplicación de escritorio, con el diálogo Guardar habitual). <b>Open file…</b> carga uno. Arrastra un archivo de proyecto a la ventana para abrirlo.</li>
-          <li>Deshaz / rehaz todo con <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>.</li>
+          <li>Deshaz / rehaz todo con <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>. El botón <b>History</b> a su lado lista cada cambio con su hora: haz clic en uno para volver justo después de él (o avanzar de nuevo).</li>
         </ul>
 
         <h2 id="shortcuts">Atajos de teclado</h2>

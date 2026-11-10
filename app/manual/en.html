@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Previs Studio · User manual</title>
-    <meta name="description" content="Complete user manual for Previs Studio — 3D previs and virtual directing for filmmakers." />
+    <title>ShotTitan · User manual</title>
+    <meta name="description" content="Complete user manual for ShotTitan — 3D previs and virtual directing for filmmakers." />
     <link rel="stylesheet" href="manual.css" />
   </head>
   <body dir="ltr">
     <header class="top">
-      <div class="logo">P</div>
-      <span class="name">Previs Studio · User manual</span>
+      <div class="logo">S</div>
+      <span class="name">ShotTitan · User manual</span>
       <nav class="langs" aria-label="Language">
         <a href="en.html" class="on" lang="en">English</a>
         <a href="fa.html">Persian</a>
@@ -54,10 +54,10 @@
         </ol>
       </nav>
       <main>
-        <h1 id="welcome">Previs Studio</h1>
+        <h1 id="welcome">ShotTitan</h1>
         <p class="lead">3D previs and virtual directing for filmmakers: block a scene, place actors and props, set up cameras and lenses, shoot your coverage, animate, light — and export an animatic.</p>
-        <figure><img src="img/overview.jpg" alt="Previs Studio main window" /><figcaption>The main window: asset library (left), 3D view (centre), scene and inspector (right), shots and timeline (bottom).</figcaption></figure>
-        <p>Previs Studio runs in three ways, all with the same features:</p>
+        <figure><img src="img/overview.jpg" alt="ShotTitan main window" /><figcaption>The main window: asset library (left), 3D view (centre), scene and inspector (right), shots and timeline (bottom).</figcaption></figure>
+        <p>ShotTitan runs in three ways, all with the same features:</p>
         <ul>
           <li><b>Desktop app</b> for Windows and macOS — works completely offline. Phone camera control is available here.</li>
           <li><b>Web version</b> — open the website and work in the browser, nothing to install.</li>
@@ -67,15 +67,15 @@
         <h2 id="install">Install &amp; first launch</h2>
         <h3>Windows</h3>
         <ol class="steps">
-          <li>Download <code>Previs-Studio-Setup.exe</code> from the download page.</li>
+          <li>Download <code>ShotTitan-Setup.exe</code> from the download page.</li>
           <li>Run it. If Windows SmartScreen shows “Windows protected your PC”, click <b>More info → Run anyway</b> (the installer is not code-signed yet).</li>
-          <li>Choose the install folder and finish. Start Previs Studio from the Start menu or the desktop shortcut.</li>
+          <li>Choose the install folder and finish. Start ShotTitan from the Start menu or the desktop shortcut.</li>
         </ol>
         <h3>macOS</h3>
         <ol class="steps">
-          <li>Download <code>Previs-Studio-mac.dmg</code> (one build for Apple Silicon and Intel).</li>
-          <li>Open it and drag <b>Previs Studio</b> into <b>Applications</b>.</li>
-          <li>The first time, <b>right-click the app → Open → Open</b>. If macOS says the app “is damaged” or cannot be checked, open <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b>, or run <code>xattr -dr com.apple.quarantine "/Applications/Previs Studio.app"</code> in Terminal.</li>
+          <li>Download <code>ShotTitan-mac.dmg</code> (one build for Apple Silicon and Intel).</li>
+          <li>Open it and drag <b>ShotTitan</b> into <b>Applications</b>.</li>
+          <li>The first time, <b>right-click the app → Open → Open</b>. If macOS says the app “is damaged” or cannot be checked, open <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b>, or run <code>xattr -dr com.apple.quarantine "/Applications/ShotTitan.app"</code> in Terminal.</li>
         </ol>
         <h3>Web version</h3>
         <p>Open the web app link from the download page in Chrome, Edge or Safari (a computer with a reasonably modern graphics card is recommended). Your projects are saved in that browser.</p>
@@ -241,6 +241,10 @@
           <tr><td><kbd>↑</kbd> <kbd>↓</kbd> · <kbd>←</kbd> <kbd>→</kbd> · <kbd>Home</kbd> <kbd>End</kbd></td><td>Previous / next cut · one frame · start / end</td></tr>
           <tr><td><kbd>A</kbd> · <kbd>T</kbd> · <kbd>B</kbd> · <kbd>N</kbd></td><td>Selection · Trim · Blade · snapping</td></tr>
           <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd> · <kbd>Ctrl</kbd>+<kbd>C</kbd>/<kbd>V</kbd> · <kbd>Ctrl</kbd>+<kbd>D</kbd></td><td>Cut at the playhead · copy / paste clips · duplicate</td></tr>
+          <tr><td><kbd>Q</kbd> · <kbd>W</kbd> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>[</kbd> / <kbd>]</kbd>)</td><td>Ripple trim the start / the end of the clip under the playhead to the playhead</td></tr>
+          <tr><td><kbd>E</kbd></td><td>Extend edit: roll the nearest cut to the playhead</td></tr>
+          <tr><td><kbd>,</kbd> <kbd>.</kbd> (<kbd>Shift</kbd>: 5 frames) · <kbd>Alt</kbd>+<kbd>,</kbd> <kbd>.</kbd></td><td>Slip the clip a frame (same place, earlier / later moment) · slide it between its neighbours</td></tr>
+          <tr><td><kbd>F</kbd></td><td>Match frame: this moment of the shot on the Camera page</td></tr>
           <tr><td><kbd>M</kbd> · <kbd>I</kbd> <kbd>O</kbd> · <kbd>Alt</kbd>+<kbd>X</kbd></td><td>Marker · In / Out · clear In / Out</td></tr>
           <tr><td><kbd>=</kbd> <kbd>-</kbd> · <kbd>Shift</kbd>+<kbd>Z</kbd></td><td>Zoom in / out · fit</td></tr>
           <tr><td><kbd>Delete</kbd> · <kbd>Esc</kbd></td><td>Delete (ripple) · clear the selection</td></tr>
@@ -254,7 +258,7 @@
           <li><b>File</b> — a sound file (MP3, WAV, M4A, OGG, FLAC) for the line.</li>
         </ul>
         <p>Each line has a speaker (or an off-screen voice), a start time (seconds of the scene; <b>⇤ Playhead</b> puts it at the playhead), its words, an <b>emotion</b> (calm, happy, excited, sad, angry, scared, whisper, shout) and a pace. The built-in voice has no emotion control of its own: the emotion is given through pace, level and punctuation. <b>Character voices</b> sets each character’s voice and pace (▶ hears it); new characters get different voices that match the figure.</p>
-        <p>On the Edit timeline, right-click a clip → <b>Add dialogue here…</b>; lines without sound show as dashed boxes where they are said, and double-clicking a voiced line’s sound opens it. While a line plays, the speaker’s mouth opens and closes with the voice and the head moves with it (in exported videos too). Voiced lines are ordinary sounds: move, trim, fade them; deleting the sound keeps the line.</p>
+        <p>On the Edit timeline, right-click a clip → <b>Add dialogue here…</b>; lines without sound show as dashed boxes where they are said, and double-clicking a voiced line’s sound opens it. While a line plays, the speaker’s head moves a little with the voice (in exported videos too). Voiced lines are ordinary sounds: move, trim, fade them; deleting the sound keeps the line.</p>
         <p>Importing a screenplay asks <b>Spoken dialogue?</b> before building: <b>Yes</b> voices every line (a parenthetical such as “(whispering)” or “(angry)” becomes the emotion); <b>No</b> keeps the lines in each scene without sound, to voice later.</p>
 
         <h2 id="motion">Camera motion</h2>
@@ -417,7 +421,7 @@ EXT. HOSPITAL PARKING LOT - CONTINUOUS</pre>
           <tr><td><b>Lens buttons</b></td><td>14 · 18 · 24 · 35 · 50 · 85 · 135 mm.</td></tr>
           <tr><td><b>Move pad · Up slider</b></td><td>Dolly / truck the camera on the floor; pedestal up / down.</td></tr>
         </table>
-        <div class="tip"><b>Tip.</b> On Windows, allow Previs Studio through the firewall on <i>private</i> networks when asked. The phone page keeps the screen awake while it is open.</div>
+        <div class="tip"><b>Tip.</b> On Windows, allow ShotTitan through the firewall on <i>private</i> networks when asked. The phone page keeps the screen awake while it is open.</div>
 
         <h2 id="animatic">Exporting an animatic</h2>
         <figure><img src="img/animatic.jpg" alt="Export animatic dialog" /></figure>
@@ -465,9 +469,9 @@ EXT. HOSPITAL PARKING LOT - CONTINUOUS</pre>
 
         <h2 id="projects">Projects &amp; files</h2>
         <ul>
-          <li>Work is <b>saved automatically</b> (the indicator next to the project name; <kbd>Ctrl</kbd>+<kbd>S</kbd> saves at once). The <b>P</b> / house button at the left of the toolbar (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>) goes to <b>Home</b> with all your films; <kbd>Esc</kbd> returns. <kbd>Ctrl</kbd>+<kbd>O</kbd> opens the scene list; the project menu has New, Rename, Save a copy.</li>
+          <li>Work is <b>saved automatically</b> (the indicator next to the project name; <kbd>Ctrl</kbd>+<kbd>S</kbd> saves at once). The <b>S</b> / house button at the left of the toolbar (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>) goes to <b>Home</b> with all your films; <kbd>Esc</kbd> returns. <kbd>Ctrl</kbd>+<kbd>O</kbd> opens the scene list; the project menu has New, Rename, Save a copy.</li>
           <li><b>Save to file…</b> writes a <code>.previs.json</code> file (in the desktop app with the normal Save dialog). <b>Open file…</b> loads one. Drag a project file onto the window to open it.</li>
-          <li>Undo / redo everything with <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>.</li>
+          <li>Undo / redo everything with <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>. The <b>History</b> button beside them lists every change with its time: click one to go back to right after it (or forward again).</li>
         </ul>
 
         <h2 id="shortcuts">Keyboard shortcuts</h2>
