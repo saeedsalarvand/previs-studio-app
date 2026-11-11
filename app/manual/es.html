@@ -263,7 +263,15 @@
 
         <h2 id="motion">Movimiento de cámara</h2>
         <figure><img src="img/camera-motion.jpg" alt="Panel Camera Motion" /></figure>
-        <p>La pestaña <b>Camera Motion</b> convierte claves sencillas en movimientos cinematográficos sin tocar las claves en sí. Elige un <b>movimiento</b> (dolly in / out, push in, paneo, tilt, travelling lateral, pedestal, grúa, jib, arco, órbita, circular, zoom, dolly zoom, seguimiento, cámara que precede, sobre el hombro, paralaje, revelación, cámara en mano…) y su intensidad, o combina capas de efectos:</p>
+        <p>La pestaña <b>Camera Motion</b> diseña el movimiento de cámara del plano en tres pasos:</p>
+        <ol class="steps">
+          <li><b>Subject</b> (sujeto): un personaje, cualquier objeto o un <b>null target</b> (punto de mira). Elígelo en la lista con imágenes, con <b>Pick</b> haciendo clic en la vista, o <b>Selected</b>. Luego dónde queda en el cuadro: centro, tercio izquierdo, tercio derecho, ojos en el tercio superior o personalizado.</li>
+          <li><b>Move</b> (movimiento): un preajuste, o <b>Describe it</b>: escribe el movimiento en inglés sencillo, p. ej. <i>“slow push in on Sarah until a close-up”</i>. <b>Read</b> muestra cómo se entendió; las palabras no entendidas se muestran en ámbar, nunca se ignoran. Corrige lo que haga falta y pulsa Apply. (Sin IA; con tu clave de Claude, un botón puede reformularlo.)</li>
+          <li><b>Options</b> (opciones): cada movimiento tiene las suyas (órbita: radio, ángulo inicial, barrido, dirección, altura…; push: distancia o tamaño final; grúa: altura inicial, subida, alcance, arco; seguimiento: distancia, altura, desplazamiento lateral, retraso) y todos tienen tamaño inicial, altura de cámara, duración, ritmo, suavizado, sensación de soporte, cambio de lente, foco en el sujeto y ángulo holandés. <b>Apply</b> escribe claves normales que puedes ajustar en la línea de tiempo.</li>
+        </ol>
+        <p>La cámara encuadra primero al sujeto y luego se mueve a su alrededor; si el sujeto se mueve, la cámara lo sigue y lo mantiene en su punto del cuadro. Tras aplicar, el movimiento sigue siendo editable; si cambiaste sus claves a mano, pregunta antes de reemplazarlas. Clic derecho sobre un personaje u objeto: <b>Camera: orbit around this</b> / <b>push in on this</b>.</p>
+        <p>Los <b>null targets</b> solo se ven en el editor (nunca en planos ni exportaciones): se añaden desde <b>+ Camera → Null target</b>, la lista de sujetos o el clic derecho, se mueven y animan como cualquier objeto y pueden seguir a un personaje (cuerpo, cabeza o mano). <b>Parent</b>: cualquier cosa puede seguir a otra; arrastra una fila sobre otra en la lista de escena o usa <b>Parent to…</b> / <b>Clear parent</b>.</p>
+        <p>Debajo, las capas cinematográficas cambian cómo se reproducen las claves sin tocarlas:</p>
         <table>
           <tr><th>Capa</th><th>Qué hace</th></tr>
           <tr><td>Timing</td><td>Aceleración/desaceleración suave, velocidad constante, rampas de velocidad, pausas</td></tr>
