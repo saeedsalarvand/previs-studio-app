@@ -9,7 +9,7 @@
   <a href="https://github.com/saeedsalarvand/previs-studio-app/releases/latest/download/ShotTitan-Setup.exe"><b>⬇ Download for Windows</b></a>
 </p>
 
-<p align="center">Version 1.12.0 · Windows 10 / 11 · free · works fully offline</p>
+<p align="center">Version 1.13.0 · Windows 10 / 11 · free · works fully offline</p>
 
 ---
 
